@@ -1,0 +1,14 @@
+.block {
+  padding: 12px 0px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0px 5px 5px rgba(115, 227, 255, 0.291);
+  width: 330px;
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 0px 16px;
+  margin-bottom: 10px;
+}

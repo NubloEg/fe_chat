@@ -1,0 +1,39 @@
+.writer{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.input{
+    display: flex;
+    align-items: center;
+    background-color: #EFF6FC;
+    padding: 12px;
+    border-radius: 14px;
+    width: 100%;
+    height: 55px;
+}
+
+.textarea{
+    background-color: transparent;
+    resize: none;
+    width: 100%;
+    font-size: 16px;
+}
+
+.emoji{
+    cursor: pointer;
+    height: 40px;
+}
+
+
+.send{
+    cursor: pointer;
+    background-color: #6E00FF;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
