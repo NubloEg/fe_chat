@@ -1,0 +1,53 @@
+import React from "react";
+import s from "./Post.module.css";
+import commentImg from "./../../assets/icons/comment.svg";
+import likesImg from "./../../assets/icons/like.svg";
+import authorImg from "./../../assets/icons/account.svg";
+
+interface Props {
+  title: string;
+  image?: string;
+  description: string;
+  author: string;
+  comments: number;
+  likes: number;
+}
+
+export default function Post({
+  description,
+  title,
+  image,
+  author,
+  comments,
+  likes,
+}: Props) {
+  return (
+    <div className={s.PostItem}>
+      <h1 className={s.h1}>{title}</h1>
+      <div className={s.flexPostItem}>
+        {image && (
+          <div className={s.imageBox}>
+            <img src={image} alt="" />
+          </div>
+        )}
+        <div className={s.description}>{description}</div>
+      </div>
+      <div className={s.postInfo}>
+        <div className={s.popular}>
+          <div className={s.comments}>
+            <img src={commentImg} alt="" />
+            <div>{comments} Comments</div>
+          </div>
+          <div className={s.likes}>
+            <img src={likesImg} alt="" />
+            <div>{likes} Likes</div>
+          </div>
+        </div>
+        <div className={s.author}>
+          <img src={authorImg} alt="" />
+          <div>{author}</div>
+        </div>
+      </div>
+    </div>
+  );
+}

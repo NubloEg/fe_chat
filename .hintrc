@@ -1,0 +1,36 @@
+{
+  "extends": [
+    "development"
+  ],
+  "hints": {
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "-ms-text-size-adjust",
+          "scrollbar-color",
+          "scrollbar-width",
+          "scale",
+          "text-underline-offset"
+        ]
+      }
+    ],
+    "axe/structure": [
+      "default",
+      {
+        "list": "off"
+      }
+    ]
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not and_chr <= 117",
+    "not chrome <= 117",
+    "not edge <= 117",
+    "not ios_saf <= 17",
+    "not opera <= 102",
+    "not safari <= 16.6",
+    "not samsung <= 22"
+  ]
+}

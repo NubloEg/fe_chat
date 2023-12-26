@@ -1,0 +1,25 @@
+.button {
+  padding: 12px 30px;
+  color: black;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0px 5px 5px rgba(115, 227, 255, 0.291);
+  font-size: 18px;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  box-shadow: 8px 8px 15px rgba(1, 4, 4, 0.675);
+  background-color: #6d00fe;
+  color: white;
+}
+
+.variant {
+  box-shadow: 8px 8px 15px rgba(1, 4, 4, 0.675);
+  background-color: #6d00fe;
+  color: white;
+}
+
+.variant:hover {
+  box-shadow: 0px 5px 5px rgba(115, 227, 255, 0.291);
+}

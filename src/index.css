@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 *{
 	padding: 0;
 	margin: 0;
@@ -36,3 +38,28 @@ ul li{list-style-type: none;}
 img{vertical-align: top;}
 
 h1,h2, h3, h4, h5, h6{font-style: inherit; font-weight: 400;}
+
+/* W3C standard
+   сейчас только для Firefox */
+   * {
+	scrollbar-width: thin;
+	scrollbar-color: #612dd1dd rgba(255, 255, 255, 0);
+  }
+  
+  /* для Chrome/Edge/Safari */
+  *::-webkit-scrollbar {
+	height: 6px;
+	width: 6px;
+  }
+  *::-webkit-scrollbar-track {
+	border-radius: 15px;
+	background: rgba(255, 255, 255, 0);
+	margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  *::-webkit-scrollbar-thumb {
+	background-color: #612dd1dd;
+	border-radius: 15px;
+	border: 2px solid rgba(255, 255, 255, 0);
+  }
+

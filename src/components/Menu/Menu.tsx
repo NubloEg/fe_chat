@@ -5,9 +5,10 @@ import bell from "../../assets/icons/bell.svg";
 import setting from "../../assets/icons/settings.svg";
 import exit from "../../assets/icons/exit.svg";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Menu() {
-  const [nowPage, setNowPage] = useState(home);
+  const [nowPage, setNowPage] = useState("home");
   return (
     <header className={s.header}>
       <div>
@@ -20,22 +21,23 @@ export default function Menu() {
         </div>
         <nav className={s.nav}>
           <ul className={s.ul}>
-            {[home, chat, bell, setting].map((el) => {
+            {[{name:"home",img:home},{name:"chat",img:chat},{name:"bell",img:bell},{name:"setting",img:setting}].map((el) => {
               return (
-                <li
-                  className={`${nowPage === el ? s.active : ""}`}
-                  onClick={() => setNowPage(el)}
+                <Link
+                  to={el.name}
+                  className={`${s.li} ${nowPage === el.name ? s.active : ""}`}
+                  onClick={() => setNowPage(el.name)}
                 >
-                  <img src={el} alt="home" />
-                </li>
+                  <img src={el.img} alt="home" />
+                </Link>
               );
             })}
           </ul>
         </nav>
       </div>
-      <div className={s.out}>
+      <Link to={"/login"} onClick={()=>sessionStorage.removeItem('profile')} className={s.out}>
         <img src={exit} alt="exit" />
-      </div>
+      </Link>
     </header>
   );
 }

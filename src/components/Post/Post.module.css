@@ -1,0 +1,110 @@
+.PostItem {
+  background-color: #6d00fe;
+  border-radius: 16px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  color: white;
+  margin: 0 auto;
+  padding: 20px 45px;
+  margin-bottom: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.PostItem:hover {
+  /*  transform: translateY(-5px); */
+  background-color: #5503c0;
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.25);
+}
+
+.h1 {
+  font-weight: 700;
+  font-size: 62px;
+  font-family: "Kaisei Decol";
+  padding: 0px;
+  margin-bottom: 20px;
+}
+
+.flexPostItem {
+  display: flex;
+  gap: 26px;
+  width: 100%;
+}
+
+.imageBox {
+  max-width: 650px;
+  max-height: 500px;
+}
+
+.flexPostItem img {
+  max-width: 650px;
+  height: 480px;
+  border-radius: 15px;
+}
+
+.description {
+  font-family: "Lato";
+  font-size: 28px;
+  line-height: 32px;
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 15; /* number of lines to show */
+  line-clamp: 15;
+  -webkit-box-orient: vertical;
+}
+
+.postInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  font-family: "Lato";
+  font-size: 24px;
+}
+
+.postInfo img {
+  height: 40px;
+}
+
+.popular {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  transition: all 0.3s;
+}
+
+.popular div {
+  cursor: pointer;
+}
+
+.popular div:hover img {
+  scale: 1.1;
+}
+
+.popular div:hover div {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.comments {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.likes img {
+  height: 30px;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

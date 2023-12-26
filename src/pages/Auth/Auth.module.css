@@ -1,0 +1,100 @@
+.auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: white;
+}
+
+.Block {
+  padding: 12px 12px;
+  background-color: #6d00fe;
+  border-radius: 16px;
+  box-shadow: 0px 5px 5px rgba(115, 227, 255, 0.291);
+  width: 100%;
+  height: 100%;
+  max-width: 800px;
+  max-height: 500px;
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.blockFlex {
+  flex: 1;
+}
+
+.Block img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.loginBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  height: 100%;
+  transition: all 0.5s;
+}
+
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.inputBox h1 {
+  text-align: center;
+  font-size: 30px;
+}
+
+.buttonBox {
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.switcher {
+  text-align: right;
+}
+.switcher span {
+  cursor: pointer;
+  position: relative;
+}
+
+.switcher span::before {
+  transition: all 0.3s;
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  position: absolute;
+  bottom: -4px;
+}
+
+.close {
+  transform: translateY(-120%);
+}
+
+.registerBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  height: 100%;
+  transition: all 0.5s;
+  transform: translateY(100%);
+}
+
+.open {
+  transform: translateY(-100%);
+}

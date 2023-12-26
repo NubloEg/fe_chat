@@ -1,0 +1,17 @@
+.input {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.input  input {
+  font-size: 18px;
+  width: 100%;
+  padding: 12px 16px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0px 5px 5px rgba(115, 227, 255, 0.291);
+  transition: all 0.3s;
+}

@@ -34,7 +34,7 @@
     align-items: center;
 }
 
-.ul li{
+.ul .li{
     cursor: pointer;
     width: 100%;
     text-align: center;
@@ -42,17 +42,17 @@
     transition: all 0.1s;
 }
 
-.ul li img{
+.ul .li img{
     height: 35px;
 }
 
-.ul li:hover{
+.ul .li:hover{
     background-color: #612dd1dd;
     border-right: 5px solid #F3B559;
 
 }
 
-.ul li.active{
+.ul .li.active{
     background-color: #612dd1dd;
     border-right: 5px solid #F3B559;
 }
