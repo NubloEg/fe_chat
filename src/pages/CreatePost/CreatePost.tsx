@@ -8,9 +8,9 @@ export default function CreatePost() {
   return (
     <div className={s.container}>
       <div className={s.containerFlex}>
-        <Input title="Title" />
+        <Input variant="purpule" title="Title" />
         <Textarea title="Description" />
-        <Button color="purple">Создать</Button>
+        <Button variant="variant">Создать</Button>
       </div>
       
     </div>

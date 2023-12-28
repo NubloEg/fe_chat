@@ -42,7 +42,7 @@ export default function Auth() {
                 <div className={s.switcher}>
                   <span onClick={() => setIsLogin(!isLogin)}>Register</span>
                 </div>
-                <Button onClick={() => signIn()}>Login</Button>
+                <Button variant="" onClick={() => signIn()}>Login</Button>
               </div>
             </div>
 
@@ -57,7 +57,7 @@ export default function Auth() {
                 <div className={s.switcher}>
                   <span onClick={() => setIsLogin(!isLogin)}>Login</span>
                 </div>
-                <Button onClick={() => signUp()}>Register</Button>
+                <Button variant="" onClick={() => signUp()}>Register</Button>
               </div>
             </div>
           </div>

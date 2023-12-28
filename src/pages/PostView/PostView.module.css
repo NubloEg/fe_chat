@@ -1,0 +1,100 @@
+.post {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0px 5px 5px rgba(115, 227, 255, 0.291);
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    font-family: "Kaisei Decol";
+    overflow-y: auto;
+
+}
+
+.postHeader {
+    position: relative;
+    background-color: #6d00fe;
+}
+
+.back {
+    width: 170px;
+    padding: 15px 0;
+    padding-left: 55px;
+    font-weight: 500;
+    font-size: 24px;
+    color: white;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.back:hover {
+    gap: 2px;
+}
+
+
+
+.title {
+    font-weight: 700;
+    font-size: 52px;
+    color: white;
+    padding: 0 60px;
+    padding-bottom: 35px;
+    letter-spacing: 2px;
+}
+
+.img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.info {
+    position: absolute;
+    bottom: 25px;
+    left: 10%;
+    color: white;
+    display: flex;
+    gap: 40px;
+    height: 30px;
+}
+
+.info_item{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.info_item span{
+    padding-bottom: 2px;
+}
+
+.description{
+    padding: 20px 5%;
+    font-size: 24px;
+    line-height: 35px;
+}
+
+.infoUsers{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 5%;
+}
+.infoUsers_item{
+    display: flex;
+    align-items: center;
+    gap:8px;
+    font-size: 22px;
+}
+
+
+
+.infoUsers_item img{
+    filter: invert(0%) sepia(97%) saturate(22%) hue-rotate(229deg) brightness(0%) contrast(101%);
+    cursor: pointer;
+    transition: all 0.3s;
+}

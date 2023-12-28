@@ -1,4 +1,3 @@
-import React from "react";
 import Search from "../../components/UI/Search/Search";
 import Block from "../../components/Block/Block";
 import Item from "../../components/Block/Item/Item";
