@@ -26,7 +26,7 @@ export default function Content() {
 
   return (
     <>
-     {width > 650 ? <Menu />:<MenuMobile/>}
+     {width > 750 ? <Menu />:<MenuMobile/>}
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/chat" element={<ChatPage />} />

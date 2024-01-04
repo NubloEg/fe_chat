@@ -115,7 +115,7 @@
 }
 
 
-@media (max-width:650px){
+@media (max-width:750px){
   .PostItem{
     padding: 10px;
     justify-content: space-between;
@@ -140,7 +140,7 @@
   
   .imageBox {
     min-width: 100%;
-    max-height: auto;
+    max-height: max-content;
   }
   
   .imageBox img{

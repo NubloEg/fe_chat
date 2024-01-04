@@ -14,3 +14,18 @@
   padding: 24px;
   height: 100%;
 }
+
+@media (max-width:750px){
+  .containerFlex{
+    padding-top: 10px;
+  }
+
+  .containerFlex label:nth-child(1) {
+    padding-left: 70px;
+    gap: 2px;
+  }
+
+  .containerFlex button {
+    width: 100%;
+  }
+}

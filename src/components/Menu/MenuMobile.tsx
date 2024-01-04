@@ -10,7 +10,7 @@ import Loader from "../Loader/Loader";
 
 export default function MenuMobile() {
     const [loading, setLoading] = useState(true)
-    const [isOpen, setIsOpen] = useState(true)
+    const [isOpen, setIsOpen] = useState(false)
     const [nowPage, setNowPage] = useState("home");
     return (
         <>

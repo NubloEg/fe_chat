@@ -41,3 +41,36 @@
 .options{
   cursor: pointer;
 }
+
+.back{
+  display: none;
+}
+
+@media(max-width:750px){
+  .chat{
+    position: fixed;
+    height: 100%;
+    border-radius: 0px;
+    transition: all 0.3s;
+  }
+
+  .open{
+    left: 0;
+    
+  }
+
+  .close{
+    left: 100%;
+
+  }
+
+  .chatInfo{
+    margin-left: 70px;
+    padding-top: 10px;
+  }
+
+  .back{
+    display: block;
+    text-align: right;
+  }
+}

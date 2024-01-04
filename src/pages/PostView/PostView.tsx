@@ -15,7 +15,8 @@ export default function PostView() {
   const navigate = useNavigate()
 
   return (
-    <div className={s.post}>
+    <div className={s.overflowContainer} >
+      <div className={s.post}>
       <div className={s.postHeader}>
         <div className={s.back} onClick={() => navigate('/home')} >
           <img src={arrow} alt="" />
@@ -53,11 +54,12 @@ export default function PostView() {
         </div>
       </div>
       <div style={{ padding: "25px 80px" }}>Комментарии</div>
-      <div style={{ margin: "10px 80px"}}>
+      <div className={s.blockComments} >
         {[1, 2, 3, 4, 5].map((i) => <Comment key={i}/>)}
       </div>
       {loading && <Loader />}
 
+    </div>
     </div>
   )
 }

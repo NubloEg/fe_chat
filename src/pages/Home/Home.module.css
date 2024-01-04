@@ -39,13 +39,45 @@
 
 
 
-@media (max-width:650px) {
+@media (max-width:750px) {
   .home{
     border-radius: 0px;
 
   }
 
+  .upFlex{
+    margin-right: 15px;
+    padding-top: 25px;
+    margin-left: 100px;
+  }
+
+  .h1 {
+    font-size: 30px;
+    margin-bottom: 0px;
+    
+  }
+
   .posts {
     padding: 0 10px;
   }
+}
+
+
+@media (max-width:400px) {
+
+
+  .h1 {
+    display: none;
+    
+  }
+
+  .upFlex{
+    justify-content: center;
+
+  }
+  button{
+    width: 90%;
+  }
+
+ 
 }
