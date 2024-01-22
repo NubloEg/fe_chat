@@ -6,6 +6,8 @@
   box-shadow: 0px 5px 5px rgba(115, 227, 255, 0.291);
   font-size: 18px;
   transition: all 0.3s;
+  cursor: pointer;
+  border:none;
 }
 
 .button:hover {

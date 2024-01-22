@@ -3,6 +3,7 @@ import s from "./Post.module.css";
 import commentImg from "./../../assets/icons/comment.svg";
 import likesImg from "./../../assets/icons/like.svg";
 import authorImg from "./../../assets/icons/account.svg";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   title: string;
@@ -21,8 +22,13 @@ export default function Post({
   comments,
   likes,
 }: Props) {
+  const navigate=useNavigate()
+  const redirect=()=>{
+    navigate('/post/1')
+  }
   return (
-    <div className={s.PostItem}>
+    <div onClick={()=>redirect()} className={s.PostItem}>
+      <div>
       <h1 className={s.h1}>{title}</h1>
       <div className={s.flexPostItem}>
         {image && (
@@ -31,6 +37,7 @@ export default function Post({
           </div>
         )}
         <div className={s.description}>{description}</div>
+      </div>
       </div>
       <div className={s.postInfo}>
         <div className={s.popular}>

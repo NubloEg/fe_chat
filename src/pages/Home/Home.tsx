@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Post from "../../components/Post/Post";
 import s from "./Home.module.css";
 import Button from "../../components/UI/Button/Button";
 import { useNavigate } from "react-router-dom";
+import Loader from "../../components/Loader/Loader";
 
 export default function Home() {
   const navigate = useNavigate()
+  const [loading,setLoading]=useState(true)
+
+  useEffect(()=>{
+    setTimeout(()=>setLoading(false),3000)
+  },[])
+
   return (
     <div className={s.home}>
       <div className={s.upFlex}>
       <h1 className={s.h1}>POSTS</h1>
-      <Button color="purple" onClick={()=>navigate("/createpost")}>Создать статью</Button>
+      <Button variant="variant" onClick={()=>navigate("/createpost")}>Создать статью</Button>
       </div>
       <div className={s.posts}>
         <Post
@@ -44,6 +51,7 @@ export default function Home() {
           title="Design Process for Beginners"
         />
       </div>
+      {loading && <Loader/>}
     </div>
   );
 }

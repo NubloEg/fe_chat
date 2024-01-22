@@ -98,3 +98,22 @@
 .open {
   transform: translateY(-100%);
 }
+
+
+@media (max-width:750px) {
+  .Block{
+    position: relative;
+  }
+
+  .blockFlex{
+    z-index: 2;
+  }
+
+  .Block img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+}

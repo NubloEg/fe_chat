@@ -1,0 +1,21 @@
+.comment{
+    padding: 25px;
+    border-bottom: 1px solid black;
+}
+
+.commentInfo{
+    display: flex;
+    gap: 45px;
+    margin-left: -2px;
+    margin-bottom: 10px;
+}
+
+.info_item{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.info_item img{
+    filter: invert(0%) sepia(97%) saturate(22%) hue-rotate(229deg) brightness(0%) contrast(101%);
+}

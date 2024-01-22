@@ -1,9 +1,13 @@
 import React from 'react'
 import s from "./Item.module.css"
 
-export default function Item() {
+interface Props{
+  onClick?:()=>void
+}
+
+export default function Item({onClick}:Props) {
   return (
-    <div className={s.conversation}>
+    <div onClick={onClick} className={s.conversation}>
       <img src={'https://images.pngnice.com/download/2007/User-Account-Person-PNG-File.png'} alt="" />
       <div className={s.conversationInfo}>
         <div className={s.conversationInfo__left} >

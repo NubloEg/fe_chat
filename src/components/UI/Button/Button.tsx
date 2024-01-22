@@ -1,11 +1,24 @@
 import React from "react";
 import s from "./Button.module.css";
+import cs from "classnames"
+
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement>{
+  variant:string
+}
 
 export default function Button(
-  props: React.ButtonHTMLAttributes<HTMLButtonElement>
+  props: Props
 ) {
+
+  const mainClass = cs(
+    s.button,
+    s[props.variant]   
+  )
+  
+  console.log(mainClass,s[props.variant])
+
   return (
-    <button {...props} className={`${s.button} ${props.color ? s.variant : ""}`}>
+    <button {...props}  className={mainClass}>
       {props.children}
     </button>
   );

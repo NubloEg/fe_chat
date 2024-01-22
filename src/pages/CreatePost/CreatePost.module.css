@@ -1,6 +1,4 @@
 .container {
-  padding-top: 10px;
-  padding-bottom: 30px;
   background-color: white;
   border-radius: 16px;
   box-shadow: 0px 5px 5px rgba(115, 227, 255, 0.291);
@@ -15,4 +13,19 @@
   gap: 24px;
   padding: 24px;
   height: 100%;
+}
+
+@media (max-width:750px){
+  .containerFlex{
+    padding-top: 10px;
+  }
+
+  .containerFlex label:nth-child(1) {
+    padding-left: 70px;
+    gap: 2px;
+  }
+
+  .containerFlex button {
+    width: 100%;
+  }
 }

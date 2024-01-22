@@ -3,7 +3,12 @@ import options from "../../assets/icons/options.svg";
 import ChatTextArea from "./ChatTextArea/ChatTextArea";
 import ChatItem from "./ChatItem/ChatItem";
 
-export default function Chat() {
+interface Props{
+  isOpen:boolean;
+  setIsOpenChat:React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function Chat({isOpen,setIsOpenChat}:Props) {
   const messages = [
     { id: 1, message: "Привет", type: "other", date: "Today, 8.30pm" },
     { id: 2, message: "Привет!", type: "", date: "Today, 8.30pm" },
@@ -12,7 +17,8 @@ export default function Chat() {
   ];
 
   return (
-    <div className={s.chat}>
+    <div className={`${s.chat} ${isOpen ? s.open:s.close}`}>
+      <div className={s.back} onClick={()=>setIsOpenChat(false)}>Back</div>
       <div className={s.chatInfo}>
         <div className={s.chatPersonInfo}>
           <img
