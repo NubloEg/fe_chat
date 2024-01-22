@@ -1,6 +1,6 @@
 .App{
   display: flex;
-  height: 100vh;
+  height: 100dvh;
   padding: 44px 42px;
   gap: 40px;
 }
