@@ -22,22 +22,20 @@ export default function Post({
   comments,
   likes,
 }: Props) {
-  const navigate=useNavigate()
-  const redirect=()=>{
-    navigate('/post/1')
-  }
+  const navigate = useNavigate();
+  const redirect = () => {
+     navigate("/post/1");
+  };
   return (
-    <div onClick={()=>redirect()} className={s.PostItem}>
-      <div>
-      <h1 className={s.h1}>{title}</h1>
-      <div className={s.flexPostItem}>
+    <div onClick={() => redirect()} className={s.PostItem}>
+      <div className={s.boxPostInfo}>
+        <h1 className={s.h1}>{title}</h1>
         {image && (
           <div className={s.imageBox}>
             <img src={image} alt="" />
           </div>
         )}
         <div className={s.description}>{description}</div>
-      </div>
       </div>
       <div className={s.postInfo}>
         <div className={s.popular}>

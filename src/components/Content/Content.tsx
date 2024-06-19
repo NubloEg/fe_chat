@@ -6,6 +6,7 @@ import Home from "../../pages/Home/Home";
 import CreatePost from "../../pages/CreatePost/CreatePost";
 import PostView from "../../pages/PostView/PostView";
 import MenuMobile from "../Menu/MenuMobile";
+import Settings from "../../pages/Settings/Settings";
 
 export default function Content() {
   const navigate = useNavigate();
@@ -26,12 +27,13 @@ export default function Content() {
 
   return (
     <>
-     {width > 750 ? <Menu />:<MenuMobile/>}
+     {width > 991 ? <Menu />:<MenuMobile/>}
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/chat" element={<ChatPage />} />
         <Route path="/createpost" element={<CreatePost />} />
         <Route path="/post/:id" element={<PostView/>} />
+        <Route path="/setting" element={<Settings/>} />
       </Routes>
     </>
   );

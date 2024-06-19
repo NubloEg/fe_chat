@@ -3,12 +3,13 @@ import options from "../../assets/icons/options.svg";
 import ChatTextArea from "./ChatTextArea/ChatTextArea";
 import ChatItem from "./ChatItem/ChatItem";
 
-interface Props{
-  isOpen:boolean;
-  setIsOpenChat:React.Dispatch<React.SetStateAction<boolean>>;
+interface Props {
+  isOpen: boolean;
+  setIsOpenChat: React.Dispatch<React.SetStateAction<boolean>>;
+  chat: { name: string; status: string; lastDate: string; id: number };
 }
 
-export default function Chat({isOpen,setIsOpenChat}:Props) {
+export default function Chat({ isOpen, setIsOpenChat, chat }: Props) {
   const messages = [
     { id: 1, message: "Привет", type: "other", date: "Today, 8.30pm" },
     { id: 2, message: "Привет!", type: "", date: "Today, 8.30pm" },
@@ -17,8 +18,10 @@ export default function Chat({isOpen,setIsOpenChat}:Props) {
   ];
 
   return (
-    <div className={`${s.chat} ${isOpen ? s.open:s.close}`}>
-      <div className={s.back} onClick={()=>setIsOpenChat(false)}>Back</div>
+    <div className={`${s.chat} ${isOpen ? s.open : s.close}`}>
+      <div className={s.back} onClick={() => setIsOpenChat(false)}>
+        Back
+      </div>
       <div className={s.chatInfo}>
         <div className={s.chatPersonInfo}>
           <img
@@ -27,8 +30,8 @@ export default function Chat({isOpen,setIsOpenChat}:Props) {
             className="avatar"
           />
           <div className={s.personInfoText}>
-            <div className="chatName">Egor</div>
-            <div className="chatLastDate">Online - Last seen, 2.02pm</div>
+            <div className="chatName">{chat.name}</div>
+            <div className="chatLastDate">{chat.status} - Last seen,{chat.lastDate}</div>
           </div>
         </div>
         <img src={options} alt="" className={s.options} />

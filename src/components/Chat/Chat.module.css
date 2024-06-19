@@ -46,7 +46,7 @@
   display: none;
 }
 
-@media(max-width:750px){
+@media(max-width:991px){
   .chat{
     position: fixed;
     height: 100%;

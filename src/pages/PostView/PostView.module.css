@@ -123,7 +123,7 @@
 
 }
 
-@media (max-width:750px) {
+@media (max-width:991px) {
     .overflowContainer {
         display: table;
         padding-right: 0px;
