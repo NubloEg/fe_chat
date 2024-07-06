@@ -10,30 +10,30 @@ import Settings from "../../pages/Settings/Settings";
 
 export default function Content() {
   const navigate = useNavigate();
-  const [width,setWidth]=useState(0)
+  const [width, setWidth] = useState(0);
 
   useEffect(() => {
     if (!sessionStorage.getItem("profile")) {
       navigate("/login");
     }
-    const handleResize = (event:any) => {
+    const handleResize = (event: any) => {
       setWidth(event.target.innerWidth);
     };
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
-  },[width,navigate]);
+  }, [width, navigate]);
 
   return (
     <>
-     {width > 991 ? <Menu />:<MenuMobile/>}
+      {width > 991 ? <Menu /> : <MenuMobile />}
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/chat" element={<ChatPage />} />
         <Route path="/createpost" element={<CreatePost />} />
-        <Route path="/post/:id" element={<PostView/>} />
-        <Route path="/setting" element={<Settings/>} />
+        <Route path="/post/:id" element={<PostView />} />
+        <Route path="/setting" element={<Settings />} />
       </Routes>
     </>
   );

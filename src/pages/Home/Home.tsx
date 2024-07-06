@@ -6,18 +6,20 @@ import { useNavigate } from "react-router-dom";
 import Loader from "../../components/Loader/Loader";
 
 export default function Home() {
-  const navigate = useNavigate()
-  const [loading,setLoading]=useState(true)
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
 
-  useEffect(()=>{
-    setTimeout(()=>setLoading(false),3000)
-  },[])
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 3000);
+  }, []);
 
   return (
     <div className={s.home}>
       <div className={s.upFlex}>
-      <h1 className={s.h1}>POSTS</h1>
-      <Button variant="variant" onClick={()=>navigate("/createpost")}>Создать статью</Button>
+        <h1 className={s.h1}>POSTS</h1>
+        <Button variant="variant" onClick={() => navigate("/createpost")}>
+          Создать статью
+        </Button>
       </div>
       <div className={s.posts}>
         <Post
@@ -30,7 +32,7 @@ export default function Home() {
         Most of the information we perceive is through our eyes, which means that we see first and then think. Therefore, we must understand how to attract attention and process it in a way that the user performs the necessary actions [...]"
           title="Design Process for Beginners"
         />
-         <Post
+        <Post
           author="Egor Dovgalev"
           comments={6}
           likes={14}
@@ -40,7 +42,7 @@ export default function Home() {
         Most of the information we perceive is through our eyes, which means that we see first and then think. Therefore, we must understand how to attract attention and process it in a way that the user performs the necessary actions [...]"
           title="Design Process for Beginners"
         />
-         <Post
+        <Post
           author="Egor Dovgalev"
           comments={6}
           likes={14}
@@ -51,7 +53,7 @@ export default function Home() {
           title="Design Process for Beginners"
         />
       </div>
-      {loading && <Loader/>}
+      {loading && <Loader />}
     </div>
   );
 }

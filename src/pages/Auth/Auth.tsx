@@ -16,12 +16,12 @@ export default function Auth() {
   }, []);
 
   const signIn = () => {
-    sessionStorage.setItem('profile',"hello")
+    sessionStorage.setItem("profile", "hello");
     navigate("/home");
   };
 
   const signUp = () => {
-    sessionStorage.setItem('profile',"hello")
+    sessionStorage.setItem("profile", "hello");
     navigate("/home");
   };
 
@@ -35,14 +35,16 @@ export default function Auth() {
             <div className={`${s.loginBlock} ${!isLogin && s.close}`}>
               <div className={s.inputBox}>
                 <h1>Login</h1>
-                <Input type="text" title="Username" />
+                <Input type="text" title="Email" />
                 <Input type="password" title="Password" />
               </div>
               <div className={s.buttonBox}>
                 <div className={s.switcher}>
                   <span onClick={() => setIsLogin(!isLogin)}>Register</span>
                 </div>
-                <Button variant="" onClick={() => signIn()}>Login</Button>
+                <Button variant="" onClick={() => signIn()}>
+                  Login
+                </Button>
               </div>
             </div>
 
@@ -57,7 +59,9 @@ export default function Auth() {
                 <div className={s.switcher}>
                   <span onClick={() => setIsLogin(!isLogin)}>Login</span>
                 </div>
-                <Button variant="" onClick={() => signUp()}>Register</Button>
+                <Button variant="" onClick={() => signUp()}>
+                  Register
+                </Button>
               </div>
             </div>
           </div>

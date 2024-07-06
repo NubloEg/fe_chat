@@ -6,26 +6,26 @@ import setting from "../../assets/icons/settings.svg";
 import exit from "../../assets/icons/exit.svg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Loader from "../Loader/Loader";
+
+import user from "../../assets/icons/user.png";
 
 export default function Menu() {
-  const [loading,setLoading]=useState(true)
   const [nowPage, setNowPage] = useState("home");
   return (
     <header className={s.header}>
       <div className={s.blockMenu}>
         <div className={s.profile}>
-          <img
-            className={s.img}
-            onLoad={()=>setLoading(false)}
-            src="https://images.pngnice.com/download/2007/User-Account-Person-PNG-File.png"
-            alt="ava"
-          />
+          <img className={s.img} src={user} alt="ava" />
           <span className={s.spanMobile}>Egor Dovgalev</span>
         </div>
         <nav className={s.nav}>
           <ul className={s.ul}>
-            {[{name:"home",img:home},{name:"chat",img:chat},{name:"bell",img:bell},{name:"setting",img:setting}].map((el) => {
+            {[
+              { name: "home", img: home },
+              { name: "chat", img: chat },
+              { name: "bell", img: bell },
+              { name: "setting", img: setting },
+            ].map((el) => {
               return (
                 <Link
                   to={el.name}
@@ -40,10 +40,13 @@ export default function Menu() {
           </ul>
         </nav>
       </div>
-      <Link to={"/login"} onClick={()=>sessionStorage.removeItem('profile')} className={s.out}>
+      <Link
+        to={"/login"}
+        onClick={() => sessionStorage.removeItem("profile")}
+        className={s.out}
+      >
         <img src={exit} alt="exit" />
       </Link>
-      {loading && <Loader/>}
     </header>
   );
 }
