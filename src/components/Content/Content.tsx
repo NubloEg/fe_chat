@@ -13,9 +13,15 @@ export default function Content() {
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
-    if (!sessionStorage.getItem("profile")) {
+    if (!sessionStorage.getItem("token")) {
       navigate("/login");
+    } else {
+      navigate("/home");
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
     const handleResize = (event: any) => {
       setWidth(event.target.innerWidth);
     };

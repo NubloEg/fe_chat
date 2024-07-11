@@ -8,9 +8,12 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import user from "../../assets/icons/user.png";
+import { logOut } from "../../pages/Auth/AuthSlice";
+import { useAppDispatch } from "../../common/store/store";
 
 export default function Menu() {
   const [nowPage, setNowPage] = useState("home");
+  const dispatch = useAppDispatch();
   return (
     <header className={s.header}>
       <div className={s.blockMenu}>
@@ -28,6 +31,7 @@ export default function Menu() {
             ].map((el) => {
               return (
                 <Link
+                  key={el.name}
                   to={el.name}
                   className={`${s.li} ${nowPage === el.name ? s.active : ""}`}
                   onClick={() => setNowPage(el.name)}
@@ -41,8 +45,11 @@ export default function Menu() {
         </nav>
       </div>
       <Link
+        onClick={() => {
+          dispatch(logOut());
+          sessionStorage.removeItem("token");
+        }}
         to={"/login"}
-        onClick={() => sessionStorage.removeItem("profile")}
         className={s.out}
       >
         <img src={exit} alt="exit" />

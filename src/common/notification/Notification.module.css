@@ -1,0 +1,44 @@
+.notifications {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 1000;
+}
+
+.notification {
+  padding: 16px 24px;
+  background-color: red;
+  color: white;
+  font-size: 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  width: max-content;
+  animation: notificationAnim 10s forwards;
+}
+
+.success {
+  background-color: rgb(2, 164, 64) !important;
+}
+
+.warning {
+  background-color: rgb(255, 174, 0);
+}
+
+@keyframes notificationAnim {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}

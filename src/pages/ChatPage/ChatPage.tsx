@@ -23,7 +23,7 @@ export default function ChatPage() {
   }>({ id: 0, lastDate: "27.01.22", name: "", status: "Online" });
 
   useEffect(() => {
-    if (!sessionStorage.getItem("profile")) {
+    if (!sessionStorage.getItem("token")) {
       navigate("/login");
     }
     setWidth(window.innerWidth);
