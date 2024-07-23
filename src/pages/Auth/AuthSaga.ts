@@ -59,7 +59,19 @@ export function* signUp(
     }
     const model: UserProfileModel = { ...data, id: data._id };
     yield put(authSlice.actions.getProfileCompleted(model));
+    yield put(
+      notificationSlice.actions.addNotification({
+        type: NotificationType.success,
+        message: "Успешная регистрация",
+      })
+    );
   } catch (err) {
-    console.log(err);
+    const error = err as { message: string };
+    yield put(
+      notificationSlice.actions.addNotification({
+        type: NotificationType.error,
+        message: error.message,
+      })
+    );
   }
 }

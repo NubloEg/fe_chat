@@ -9,11 +9,9 @@ export const signUpApi = (
   password: string,
   username: string
 ) => {
-  const result = httpPost("http://localhost:5088/register", {
+  return httpPost("http://localhost:5088/register", {
     email,
     password,
     username,
   });
-  console.log(result);
-  return result;
 };
