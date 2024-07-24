@@ -3,14 +3,24 @@ export const httpPost = (url: string, data: unknown) => {
   return result;
 };
 
+export const httpGet = (url: string, data: unknown) => {
+  const result = baseApi(url, "GET", data);
+  return result;
+};
+
+export const getTokenFromSessionStorage = () => {
+  return sessionStorage.getItem("token") || "";
+};
+
 const baseApi = (url: string, method: string, data: unknown) => {
+  const token = getTokenFromSessionStorage();
   const result = fetch(url, {
     method: method,
     headers: {
-      Authorization: "Bearer ",
+      Authorization: `Bearer ${token}`,
       "Content-Type": "application/json;charset=utf-8",
     },
-    body: JSON.stringify(data),
+    body: data ? JSON.stringify(data) : undefined,
   }).then((res) => res);
 
   return handleError(result);

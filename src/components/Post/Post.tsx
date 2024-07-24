@@ -24,17 +24,21 @@ export default function Post({
 }: Props) {
   const navigate = useNavigate();
   const redirect = () => {
-     navigate("/post/1");
+    navigate("/post/1");
   };
   return (
     <div onClick={() => redirect()} className={s.PostItem}>
       <div className={s.boxPostInfo}>
         <h1 className={s.h1}>{title}</h1>
-        {image && (
-          <div className={s.imageBox}>
-            <img src={image} alt="" />
-          </div>
-        )}
+        <div className={s.imageBox}>
+          <img
+            src={
+              image ||
+              "https://allegrobowling.ru/wp-content/uploads/a/f/a/afa692b0f3d4d0338dca1b38e0061637.jpeg"
+            }
+            alt=""
+          />
+        </div>
         <div className={s.description}>{description}</div>
       </div>
       <div className={s.postInfo}>

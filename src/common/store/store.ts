@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import createSagaMiddleware from "redux-saga";
 import { rootSaga } from "./RootSaga";
 import authSlice from "../../pages/Auth/AuthSlice";
+import homeSlice from "../../pages/Home/HomeSlice";
 import notificationSlice from "../notification/NotificationSlice";
+import createPostSlice from "../../pages/CreatePost/CreatePostSlice";
 
 export function createStore() {
   const sagaMiddleware = createSagaMiddleware();
@@ -11,6 +13,8 @@ export function createStore() {
   const store = configureStore({
     reducer: {
       auth: authSlice,
+      home: homeSlice,
+      createPost: createPostSlice,
       notification: notificationSlice,
     },
     middleware: (getDefaultMiddleware) =>
