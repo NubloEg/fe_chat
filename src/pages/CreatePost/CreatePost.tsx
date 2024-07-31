@@ -28,6 +28,16 @@ export default function CreatePost() {
           variant="purpule"
           title="Title"
         />
+        <div className={s.imagePost}>
+          <img
+            className={s.img}
+            src={
+              "https://s3.us-west-1.amazonaws.com/screenshots.templatemonster.com/templates/8518/scr/1525340823317_preview3.png"
+            }
+            alt="ava"
+          />
+          <input className={s.inputPostImage} title="downloadFile" type="file" />
+        </div>
         <Textarea
           onChange={(e) =>
             setPostInfo({ title: postInfo.title, text: e.target.value })

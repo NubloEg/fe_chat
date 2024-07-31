@@ -20,7 +20,6 @@
   height: 58px;
   border-radius: 50%;
   transition: all 0.3s;
-
 }
 
 .nav {
@@ -52,13 +51,12 @@
 
 .ul .li:hover {
   background-color: #612dd1dd;
-  border-right: 5px solid #F3B559;
-
+  border-right: 5px solid #f3b559;
 }
 
 .ul .li.active {
   background-color: #612dd1dd;
-  border-right: 5px solid #F3B559;
+  border-right: 5px solid #f3b559;
 }
 
 .out {
@@ -73,7 +71,6 @@
 .out img {
   margin-top: 25px;
   height: 35px;
-
 }
 
 .out:hover {
@@ -85,10 +82,7 @@
   display: none;
 }
 
-
-
-@media (max-width:991px) {
-
+@media (max-width: 991px) {
   .open .spanMobile {
     display: inline;
   }
@@ -103,7 +97,7 @@
     transition: all 0.3s;
   }
 
-  .close{
+  .close {
     position: absolute;
     z-index: 10;
     border-radius: 50%;
@@ -113,7 +107,6 @@
     padding: 0px;
     transition: all 0.3s;
   }
-
 
   .open .ul .li {
     display: flex;
@@ -129,21 +122,21 @@
     width: 100%;
   }
 
- .profile{
+  .profile {
     display: flex;
     align-items: center;
-    gap:25px;
+    gap: 25px;
     text-transform: uppercase;
     color: white;
     font-weight: 700;
     padding-top: 15px;
+    width: 100%;
   }
 
-  .close .profile img{
+  .close .profile img {
     box-shadow: none;
     height: 38px;
     transition: all 0.3s;
-
   }
 
   .close .ul .li {
@@ -162,6 +155,5 @@
     border-radius: 50%;
     opacity: 0;
     display: none;
-
   }
 }

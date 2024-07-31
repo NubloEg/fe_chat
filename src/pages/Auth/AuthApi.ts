@@ -1,7 +1,10 @@
-import { httpPost } from "../../common/BaseApi";
+import { httpGet, httpPost } from "../../common/BaseApi";
 
 export const signInApi = (email: string, password: string) => {
-  return httpPost("https://express-chat-be.vercel.app/login", { email, password });
+  return httpPost("https://express-chat-be.vercel.app/login", {
+    email,
+    password,
+  });
 };
 
 export const signUpApi = (
@@ -14,4 +17,8 @@ export const signUpApi = (
     password,
     username,
   });
+};
+
+export const getProfileApi = () => {
+  return httpGet("https://express-chat-be.vercel.app/profile", undefined);
 };

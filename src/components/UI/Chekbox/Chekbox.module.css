@@ -1,10 +1,10 @@
 .checkbox {
   display: flex;
   height: 40px;
+  width: 80px;
   align-items: center;
   justify-content: space-between;
   border-radius: 25px;
-  max-width: 80px;
   padding: 10px;
   position: relative;
   cursor: pointer;

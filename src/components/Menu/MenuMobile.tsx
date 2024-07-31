@@ -4,17 +4,23 @@ import chat from "../../assets/icons/chat.svg";
 import bell from "../../assets/icons/bell.svg";
 import setting from "../../assets/icons/settings.svg";
 import exit from "../../assets/icons/exit.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import user from "../../assets/icons/user.png";
-import { logOut } from "../../pages/Auth/AuthSlice";
-import { useAppDispatch } from "../../common/store/store";
+import { getProfile, logOut, selectProfile } from "../../pages/Auth/AuthSlice";
+import { useAppDispatch, useAppSelector } from "../../common/store/store";
 
 export default function MenuMobile() {
   const [isOpen, setIsOpen] = useState(false);
   const [nowPage, setNowPage] = useState("home");
   const dispatch = useAppDispatch();
+  const profile = useAppSelector(selectProfile);
+  useEffect(() => {
+    if (!profile?.token) {
+      dispatch(getProfile());
+    }
+  }, []);
   return (
     <>
       <header className={`${s.header} ${isOpen ? s.open : s.close}`}>

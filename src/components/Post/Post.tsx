@@ -12,6 +12,7 @@ interface Props {
   author: string;
   comments: number;
   likes: number;
+  id: string;
 }
 
 export default function Post({
@@ -21,10 +22,11 @@ export default function Post({
   author,
   comments,
   likes,
+  id,
 }: Props) {
   const navigate = useNavigate();
   const redirect = () => {
-    navigate("/post/1");
+    navigate(`/post/${id}`);
   };
   return (
     <div onClick={() => redirect()} className={s.PostItem}>

@@ -6,6 +6,7 @@ import authSlice from "../../pages/Auth/AuthSlice";
 import homeSlice from "../../pages/Home/HomeSlice";
 import notificationSlice from "../notification/NotificationSlice";
 import createPostSlice from "../../pages/CreatePost/CreatePostSlice";
+import postViewSlice from "../../pages/PostView/PostViewSlice";
 
 export function createStore() {
   const sagaMiddleware = createSagaMiddleware();
@@ -15,6 +16,7 @@ export function createStore() {
       auth: authSlice,
       home: homeSlice,
       createPost: createPostSlice,
+      postView: postViewSlice,
       notification: notificationSlice,
     },
     middleware: (getDefaultMiddleware) =>

@@ -15,8 +15,27 @@
   height: 100%;
 }
 
-@media (max-width:991px){
-  .containerFlex{
+.imagePost {
+  width: 100%;
+  position: relative;
+}
+
+.img{
+  width: 100%;
+  object-fit: cover;
+  height: 80px;
+}
+
+.inputPostImage {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  height: 100%;
+  opacity: 0;
+}
+
+@media (max-width: 991px) {
+  .containerFlex {
     padding-top: 10px;
   }
 

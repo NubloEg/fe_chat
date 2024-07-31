@@ -32,6 +32,11 @@ export const authSlice = createSlice({
         ...state,
       };
     },
+    getProfile: (state) => {
+      return {
+        ...state,
+      };
+    },
     getProfileCompleted: (state, action: PayloadAction<UserProfileModel>) => {
       return {
         ...state,
@@ -47,7 +52,7 @@ export const authSlice = createSlice({
   },
 });
 
-export const { signIn, signUp, getProfileCompleted, logOut } =
+export const { signIn, signUp, getProfileCompleted, logOut, getProfile } =
   authSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type

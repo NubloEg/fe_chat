@@ -32,6 +32,7 @@ export default function Home() {
         {posts &&
           posts.map((el) => (
             <Post
+              id={el.id}
               key={el.id}
               author={el.user.username}
               comments={6}
