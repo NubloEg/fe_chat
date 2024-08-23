@@ -49,11 +49,20 @@ export const authSlice = createSlice({
         profile: undefined,
       };
     },
+    uploadFile: (state, action: PayloadAction<File>) => {
+      return { ...state };
+    },
   },
 });
 
-export const { signIn, signUp, getProfileCompleted, logOut, getProfile } =
-  authSlice.actions;
+export const {
+  signIn,
+  signUp,
+  getProfileCompleted,
+  logOut,
+  getProfile,
+  uploadFile,
+} = authSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectProfile = (state: RootState) => state.auth.profile;

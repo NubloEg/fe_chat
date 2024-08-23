@@ -3,4 +3,5 @@ export interface UserProfileModel {
   email: string;
   id: string;
   token: string;
+  avatarUrl: string;
 }
