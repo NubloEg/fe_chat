@@ -23,7 +23,15 @@ export default function Settings() {
       </div>
       <div className={s.profile}>
         <div className={s.avatar}>
-          <img className={s.img} src={profile?.avatarUrl || user} alt="ava" />
+          <img
+            className={s.img}
+            src={
+              profile?.avatarUrl
+                ? `https://express-chat-be.vercel.app${profile?.avatarUrl}`
+                : user
+            }
+            alt="ava"
+          />
           <input
             onChange={(e) => chooseFile(e)}
             className={s.inputFile}

@@ -24,7 +24,7 @@ export const getProfileApi = () => {
 };
 
 export const uploadFileApi = (file: File) => {
-  var data = new FormData();
-  data.append("image", file);
-  return httpPostForm("http://localhost:4000/uploads", data);
+  const formData = new FormData();
+  formData.append("image", file);
+  return httpPostForm("https://express-chat-be.vercel.app/uploads", formData);
 };

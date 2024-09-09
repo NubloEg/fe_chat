@@ -5,8 +5,5 @@ export const createPostApi = (post: {
   text: string;
   imageUrl?: string;
 }) => {
-  return httpPost("https://express-chat-be.vercel.app/posts", {
-    ...post,
-    imageUrl: "",
-  });
+  return httpPost("https://express-chat-be.vercel.app/posts", post);
 };

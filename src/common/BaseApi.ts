@@ -1,11 +1,17 @@
+import axios from "axios";
+
 export const httpPost = (url: string, data: unknown) => {
   const result = baseApi(url, "POST", data);
   return result;
 };
 
-export const httpPostForm = (url: string, data: FormData) => {
-  const result = baseApiForm(url, "POST", data);
-  return result;
+export const httpPostForm = async (url: string, formData: FormData) => {
+  const token = getTokenFromSessionStorage();
+  const { data } = await axios.post(url, formData, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  //const result = baseApiForm(url, "POST", data);
+  return data;
 };
 
 export const httpGet = (url: string, data: unknown) => {
