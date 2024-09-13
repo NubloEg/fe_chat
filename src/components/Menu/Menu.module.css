@@ -18,6 +18,8 @@
 .img {
   box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.432);
   height: 58px;
+  width: 58px;
+  object-fit: cover;
   border-radius: 50%;
   transition: all 0.3s;
 }
@@ -71,6 +73,7 @@
 .out img {
   margin-top: 25px;
   height: 35px;
+  width: 35px;
 }
 
 .out:hover {
@@ -104,6 +107,7 @@
     left: 5px;
     top: 20px;
     height: 70px;
+    width: 70px;
     padding: 0px;
     transition: all 0.3s;
   }
@@ -122,20 +126,33 @@
     width: 100%;
   }
 
+  .close .blockMenu {
+    width: 100%;
+    height: 100%;
+  }
+
   .profile {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 25px;
     text-transform: uppercase;
     color: white;
     font-weight: 700;
-    padding-top: 15px;
     width: 100%;
+  }
+
+  .close .profile {
+    height: 100%;
+
+    padding: 0;
+    margin: 0;
   }
 
   .close .profile img {
     box-shadow: none;
-    height: 38px;
+    height: 54px;
+    width: 54px;
     transition: all 0.3s;
   }
 

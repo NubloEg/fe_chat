@@ -6,6 +6,7 @@ import { getAllPostsApi } from "./HomeApi";
 import { PostData } from "./HomeData";
 import { PostModel } from "./HomeModel";
 import { mapPostDataToModel } from "./HomeMapper";
+import { loaderSlice } from "../../components/Loader/LoaderSlice";
 
 export function* homeSaga() {
   yield takeLatest(homeSlice.actions.getAllPosts, getAllPosts);
@@ -13,6 +14,9 @@ export function* homeSaga() {
 
 export function* getAllPosts() {
   try {
+    yield put(
+      loaderSlice.actions.setLoader({ scope: "getPosts", isLoading: true })
+    );
     const data: PostData[] = yield call(getAllPostsApi);
 
     const model: PostModel[] = mapPostDataToModel(data);
@@ -24,6 +28,10 @@ export function* getAllPosts() {
         type: NotificationType.error,
         message: error.message,
       })
+    );
+  } finally {
+    yield put(
+      loaderSlice.actions.setLoader({ scope: "getPosts", isLoading: false })
     );
   }
 }

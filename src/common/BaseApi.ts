@@ -6,9 +6,8 @@ export const httpPost = (url: string, data: unknown) => {
 };
 
 export const httpPostForm = async (url: string, formData: FormData) => {
-  const token = getTokenFromSessionStorage();
-  const { data } = await axios.post(url, formData, {
-    headers: { Authorization: `Bearer ${token}` },
+  const { data } = await axios.post("https://api.imageban.ru/v1", formData, {
+    headers: { Authorization: `Bearer hjqxpGptMVqS1M7T3oXv7ftCSQihL9TC8MQ` },
   });
   //const result = baseApiForm(url, "POST", data);
   return data;
@@ -63,7 +62,6 @@ const handleError = async (response: Promise<Response>) => {
     const error = await getResult(response);
     throw new Error(error.length ? error[0].msg : error.message);
   }
-  console.log("no if");
   return await getResult(response);
 };
 

@@ -7,10 +7,13 @@ import { useNavigate } from "react-router-dom";
 import Loader from "../../components/Loader/Loader";
 import { useAppDispatch, useAppSelector } from "../../common/store/store";
 import { signIn, selectProfile, signUp } from "./AuthSlice";
+import { selectLoadingScope } from "../../components/Loader/LoaderSlice";
 
 export default function Auth() {
   const dispatch = useAppDispatch();
   const profile = useAppSelector(selectProfile);
+  const isAuth = useAppSelector(selectLoadingScope);
+
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const [isLogin, setIsLogin] = useState(true);
@@ -31,6 +34,9 @@ export default function Auth() {
   }, [profile?.token, navigate]);
 
   const login = () => {
+    if (isAuth?.["signIn"]) {
+      return;
+    }
     dispatch(
       signIn({
         email: authInfo.email,
@@ -80,8 +86,11 @@ export default function Auth() {
                 <div className={s.switcher}>
                   <span onClick={() => setIsLogin(!isLogin)}>Register</span>
                 </div>
-                <Button variant="" onClick={login}>
-                  Login
+                <Button
+                  variant={isAuth?.["signIn"] ? "disabled" : ""}
+                  onClick={login}
+                >
+                  {!isAuth?.["signIn"] ? "Login" : "Load..."}
                 </Button>
               </div>
             </div>
@@ -118,8 +127,11 @@ export default function Auth() {
                 <div className={s.switcher}>
                   <span onClick={() => setIsLogin(!isLogin)}>Login</span>
                 </div>
-                <Button variant="" onClick={() => register()}>
-                  Register
+                <Button
+                  variant={isAuth?.["signUp"] ? "disabled" : ""}
+                  onClick={() => register()}
+                >
+                  {!isAuth?.["signUp"] ? "Register" : "Load..."}
                 </Button>
               </div>
             </div>

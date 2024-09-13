@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Menu from "../Menu/Menu";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import ChatPage from "../../pages/ChatPage/ChatPage";
@@ -7,10 +7,13 @@ import CreatePost from "../../pages/CreatePost/CreatePost";
 import PostView from "../../pages/PostView/PostView";
 import MenuMobile from "../Menu/MenuMobile";
 import Settings from "../../pages/Settings/Settings";
+import WithMobile from "../HOC/WithMobile";
+import { ComingSoon } from "../../pages/ComingSoon/ComingSoon";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+//import socket from "../../socket";
 
 export default function Content() {
   const navigate = useNavigate();
-  const [width, setWidth] = useState(0);
 
   useEffect(() => {
     if (!sessionStorage.getItem("token")) {
@@ -21,25 +24,16 @@ export default function Content() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    const handleResize = (event: any) => {
-      setWidth(event.target.innerWidth);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [width, navigate]);
-
   return (
     <>
-      {width > 991 ? <Menu /> : <MenuMobile />}
+      <WithMobile desktopElement={<Menu />} mobileElement={<MenuMobile />} />
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/chat" element={<ChatPage />} />
         <Route path="/createpost" element={<CreatePost />} />
         <Route path="/post/:id" element={<PostView />} />
         <Route path="/setting" element={<Settings />} />
+        <Route path="/bell" element={<ComingSoon />} />
       </Routes>
     </>
   );

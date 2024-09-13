@@ -8,4 +8,5 @@ export interface PostModel {
   tags: string[];
   viesCount: number;
   user: UserProfileModel;
+  createdAt: string;
 }

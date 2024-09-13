@@ -8,4 +8,5 @@ export interface PostData {
   tags: string[];
   viesCount: number;
   user: UserProfileData;
+  createdAt: string;
 }

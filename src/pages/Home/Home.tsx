@@ -6,17 +6,17 @@ import { useNavigate } from "react-router-dom";
 import Loader from "../../components/Loader/Loader";
 import { useAppDispatch, useAppSelector } from "../../common/store/store";
 import { getAllPosts, selectPosts } from "./HomeSlice";
+import { selectLoadingScope } from "../../components/Loader/LoaderSlice";
 
 export default function Home() {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(true);
+  const isLoading = useAppSelector(selectLoadingScope);
 
   const dispatch = useAppDispatch();
   const posts = useAppSelector(selectPosts);
 
   useEffect(() => {
     dispatch(getAllPosts());
-    setTimeout(() => setLoading(false), 3000);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -43,7 +43,7 @@ export default function Home() {
             />
           ))}
       </div>
-      {loading && <Loader />}
+      {isLoading["getPosts"] && <Loader />}
     </div>
   );
 }

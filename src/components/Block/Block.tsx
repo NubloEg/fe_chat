@@ -1,16 +1,18 @@
-import { ReactElement } from "react";
+import { ReactElement, ReactNode } from "react";
 import s from "./Block.module.css";
 
 interface Props {
-  title: string;
+  title?: string;
   items?: ReactElement[];
+  children?: ReactNode;
 }
 
-export default function Block({ items, title }: Props) {
+export default function Block({ items, title, children }: Props) {
   return (
     <div className={s.block}>
-      <h1>{title}</h1>
+      {title && <h1>{title}</h1>}
       {items && items.map((el) => el)}
+      {children}
     </div>
   );
 }

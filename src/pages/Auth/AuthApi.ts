@@ -1,4 +1,9 @@
-import { httpGet, httpPost, httpPostForm } from "../../common/BaseApi";
+import {
+  httpGet,
+  httpPatch,
+  httpPost,
+  httpPostForm,
+} from "../../common/BaseApi";
 
 export const signInApi = (email: string, password: string) => {
   return httpPost("https://express-chat-be.vercel.app/login", {
@@ -21,6 +26,13 @@ export const signUpApi = (
 
 export const getProfileApi = () => {
   return httpGet("https://express-chat-be.vercel.app/profile", undefined);
+};
+
+export const updateProfileApi = (updateProfile: {
+  username?: string;
+  avatarUrl?: string;
+}) => {
+  return httpPatch("https://express-chat-be.vercel.app/profile", updateProfile);
 };
 
 export const uploadFileApi = (file: File) => {

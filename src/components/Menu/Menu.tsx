@@ -24,7 +24,7 @@ export default function Menu() {
     <header className={s.header}>
       <div className={s.blockMenu}>
         <div className={s.profile}>
-          <img className={s.img} src={user} alt="ava" />
+          <img className={s.img} src={profile?.avatarUrl || user} alt="ava" />
           <span className={s.spanMobile}>Egor Dovgalev</span>
         </div>
         <nav className={s.nav}>

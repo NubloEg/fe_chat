@@ -43,6 +43,14 @@ export const authSlice = createSlice({
         profile: action.payload,
       };
     },
+    updateProfile: (
+      state,
+      action: PayloadAction<{ username?: string; file?: File }>
+    ) => {
+      return {
+        ...state,
+      };
+    },
     logOut: (state) => {
       return {
         ...state,
@@ -60,6 +68,7 @@ export const {
   signUp,
   getProfileCompleted,
   logOut,
+  updateProfile,
   getProfile,
   uploadFile,
 } = authSlice.actions;

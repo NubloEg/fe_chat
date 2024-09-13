@@ -12,7 +12,11 @@ export default function CreatePost() {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
-  const [postInfo, setPostInfo] = useState<CreatePostModel>({
+  const [postInfo, setPostInfo] = useState<{
+    title: string;
+    text: string;
+    image?: { previewUrl: string; file: File };
+  }>({
     title: "",
     text: "",
   });
@@ -22,9 +26,7 @@ export default function CreatePost() {
       <div className={s.containerFlex}>
         <Input
           value={postInfo.title}
-          onChange={(e) =>
-            setPostInfo({ title: e.target.value, text: postInfo.text })
-          }
+          onChange={(e) => setPostInfo({ ...postInfo, title: e.target.value })}
           variant="purpule"
           title="Title"
         />
@@ -32,22 +34,41 @@ export default function CreatePost() {
           <img
             className={s.img}
             src={
+              postInfo.image?.previewUrl ||
               "https://s3.us-west-1.amazonaws.com/screenshots.templatemonster.com/templates/8518/scr/1525340823317_preview3.png"
             }
             alt="ava"
           />
-          <input className={s.inputPostImage} title="downloadFile" type="file" />
+          <input
+            className={s.inputPostImage}
+            title="downloadFile"
+            type="file"
+            onChange={(e) => {
+              if (e.target.files?.length) {
+                const file = e.target.files[0];
+                const src = URL.createObjectURL(file);
+                setPostInfo({
+                  ...postInfo,
+                  image: { file: file, previewUrl: src },
+                });
+              }
+            }}
+          />
         </div>
         <Textarea
-          onChange={(e) =>
-            setPostInfo({ title: postInfo.title, text: e.target.value })
-          }
+          onChange={(e) => setPostInfo({ ...postInfo, text: e.target.value })}
           value={postInfo.text}
           title="Description"
         />
         <Button
           onClick={() => {
-            dispatch(createPost(postInfo));
+            dispatch(
+              createPost({
+                text: postInfo.text,
+                title: postInfo.title,
+                image: postInfo.image?.file,
+              })
+            );
             navigate("/home");
           }}
           variant="variant"

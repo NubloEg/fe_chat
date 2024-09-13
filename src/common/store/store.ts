@@ -7,6 +7,8 @@ import homeSlice from "../../pages/Home/HomeSlice";
 import notificationSlice from "../notification/NotificationSlice";
 import createPostSlice from "../../pages/CreatePost/CreatePostSlice";
 import postViewSlice from "../../pages/PostView/PostViewSlice";
+import loaderSlice from "../../components/Loader/LoaderSlice";
+import chatPageSlice from "../../pages/ChatPage/ChatPageSlice";
 
 export function createStore() {
   const sagaMiddleware = createSagaMiddleware();
@@ -16,8 +18,10 @@ export function createStore() {
       auth: authSlice,
       home: homeSlice,
       createPost: createPostSlice,
+      chatPage: chatPageSlice,
       postView: postViewSlice,
       notification: notificationSlice,
+      loading: loaderSlice,
     },
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware().concat(sagaMiddleware),

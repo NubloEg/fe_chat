@@ -2,7 +2,7 @@ import React, { ChangeEvent } from "react";
 import s from "./Settings.module.css";
 import Chekbox from "../../components/UI/Chekbox/Chekbox";
 import { useAppDispatch, useAppSelector } from "../../common/store/store";
-import { selectProfile, uploadFile } from "../Auth/AuthSlice";
+import { selectProfile, updateProfile } from "../Auth/AuthSlice";
 import user from "../../assets/icons/user.png";
 
 export default function Settings() {
@@ -12,7 +12,7 @@ export default function Settings() {
   const chooseFile = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files?.length) {
       const file = e.target.files[0];
-      dispatch(uploadFile(file));
+      dispatch(updateProfile({ username: undefined, file: file }));
     }
   };
 
@@ -25,11 +25,7 @@ export default function Settings() {
         <div className={s.avatar}>
           <img
             className={s.img}
-            src={
-              profile?.avatarUrl
-                ? `https://express-chat-be.vercel.app${profile?.avatarUrl}`
-                : user
-            }
+            src={profile?.avatarUrl ? `${profile?.avatarUrl}` : user}
             alt="ava"
           />
           <input

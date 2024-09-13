@@ -35,10 +35,18 @@ export default function PostView() {
           <img className={s.img} src={post?.imageUrl} alt="" />
 
           <div className={s.info}>
-            <div className={s.info_item}>
-              <img src={calendarImg} alt="" />
-              <span>25.10.2023</span>
-            </div>
+            {post?.createdAt && (
+              <div className={s.info_item}>
+                <img src={calendarImg} alt="" />
+                <span>
+                  {new Date(post?.createdAt).toLocaleString("ru", {
+                    year: "numeric",
+                    month: "numeric",
+                    day: "numeric",
+                  })}
+                </span>
+              </div>
+            )}
             <div className={s.info_item}>
               <img src={authorImg} alt="" />
               <span>{post?.user.username}</span>
