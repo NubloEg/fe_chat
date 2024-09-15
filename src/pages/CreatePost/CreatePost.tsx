@@ -6,7 +6,6 @@ import Button from "../../components/UI/Button/Button";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../common/store/store";
 import { createPost } from "./CreatePostSlice";
-import { CreatePostModel } from "./CreatePostModel";
 
 export default function CreatePost() {
   const navigate = useNavigate();

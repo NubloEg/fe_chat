@@ -105,8 +105,9 @@
   gap: 10px;
 }
 
-.likes img {
+.likes .img {
   height: 30px;
+  color: transparent;
 }
 
 .author {

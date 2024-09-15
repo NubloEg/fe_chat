@@ -41,20 +41,20 @@ const baseApi = (url: string, method: string, data: unknown) => {
   return handleError(result);
 };
 
-const baseApiForm = (url: string, method: string, formData: FormData) => {
-  const token = getTokenFromSessionStorage();
-  const result = fetch(url, {
-    method: method,
-    mode: "no-cors",
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json;charset=utf-8",
-    },
-    body: formData,
-  }).then((res) => res);
-  result.catch((err) => console.error(err));
-  return handleError(result);
-};
+// const baseApiForm = (url: string, method: string, formData: FormData) => {
+//   const token = getTokenFromSessionStorage();
+//   const result = fetch(url, {
+//     method: method,
+//     mode: "no-cors",
+//     headers: {
+//       Authorization: `Bearer ${token}`,
+//       "Content-Type": "application/json;charset=utf-8",
+//     },
+//     body: formData,
+//   }).then((res) => res);
+//   result.catch((err) => console.error(err));
+//   return handleError(result);
+// };
 
 const handleError = async (response: Promise<Response>) => {
   const status = await chekStatus(response);

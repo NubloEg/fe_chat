@@ -1,7 +1,6 @@
-import React from "react";
 import s from "./Post.module.css";
-import commentImg from "./../../assets/icons/comment.svg";
-import likesImg from "./../../assets/icons/like.svg";
+import { ReactComponent as CommentImg } from "./../../assets/icons/comment.svg";
+import { ReactComponent as LikesImg } from "./../../assets/icons/like.svg";
 import authorImg from "./../../assets/icons/account.svg";
 import { useNavigate } from "react-router-dom";
 
@@ -46,11 +45,11 @@ export default function Post({
       <div className={s.postInfo}>
         <div className={s.popular}>
           <div className={s.comments}>
-            <img src={commentImg} alt="" />
+            <CommentImg className={s.img} />
             <div>{comments} Comments</div>
           </div>
           <div className={s.likes}>
-            <img src={likesImg} alt="" />
+            <LikesImg className={s.img} />
             <div>{likes} Likes</div>
           </div>
         </div>

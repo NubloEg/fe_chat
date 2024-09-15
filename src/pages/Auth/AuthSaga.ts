@@ -1,4 +1,4 @@
-import { call, fork, put, select, takeLatest } from "redux-saga/effects";
+import { call, put, select, takeLatest } from "redux-saga/effects";
 import { authSlice, selectProfile } from "./AuthSlice";
 import {
   getProfileApi,

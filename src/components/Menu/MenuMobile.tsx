@@ -20,6 +20,7 @@ export default function MenuMobile() {
     if (!profile?.token) {
       dispatch(getProfile());
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <>

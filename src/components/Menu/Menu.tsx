@@ -19,13 +19,14 @@ export default function Menu() {
     if (!profile?.token) {
       dispatch(getProfile());
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <header className={s.header}>
       <div className={s.blockMenu}>
         <div className={s.profile}>
           <img className={s.img} src={profile?.avatarUrl || user} alt="ava" />
-          <span className={s.spanMobile}>Egor Dovgalev</span>
+          <span className={s.spanMobile}>{profile?.username}</span>
         </div>
         <nav className={s.nav}>
           <ul className={s.ul}>

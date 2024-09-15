@@ -87,13 +87,22 @@
   font-size: 22px;
 }
 
-.infoUsers_item img {
-  filter: invert(0%) sepia(97%) saturate(22%) hue-rotate(229deg) brightness(0%)
-    contrast(101%);
+.infoUsers_item .imgLike {
+  height: 22px;
+  color: transparent;
   cursor: pointer;
   transition: all 0.3s;
 }
 
+.infoUsers_item .activeLike {
+  color: red;
+}
+
+.infoUsers_item .imgComment {
+  height: 28px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
 .blockComments {
   margin: 10px 80px;
 }
