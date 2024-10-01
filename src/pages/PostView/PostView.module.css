@@ -87,6 +87,11 @@
   font-size: 22px;
 }
 
+.infoUsers_item span {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 .infoUsers_item .imgLike {
   height: 22px;
   color: transparent;
@@ -100,7 +105,6 @@
 
 .infoUsers_item .imgComment {
   height: 28px;
-  cursor: pointer;
   transition: all 0.3s;
 }
 .blockComments {

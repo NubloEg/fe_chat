@@ -17,7 +17,7 @@ export default function MenuMobile() {
   const dispatch = useAppDispatch();
   const profile = useAppSelector(selectProfile);
   useEffect(() => {
-    if (!profile?.token) {
+    if (!profile?.token && sessionStorage.getItem("token")) {
       dispatch(getProfile());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

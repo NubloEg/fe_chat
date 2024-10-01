@@ -11,21 +11,52 @@ import { ReactComponent as CommentImg } from "../../assets/icons/comment.svg";
 
 import Comment from "../../components/Comment/Comment";
 import { useAppDispatch, useAppSelector } from "../../common/store/store";
-import { getPost, selectPost } from "./PostViewSlice";
+import {
+  addComment,
+  dislikePost,
+  getPost,
+  likePost,
+  selectPost,
+} from "./PostViewSlice";
 import Textarea from "../../components/UI/Textarea/Textarea";
+import { selectProfile } from "../Auth/AuthSlice";
+import Button from "../../components/UI/Button/Button";
 
 export default function PostView() {
   const navigate = useNavigate();
   const { id } = useParams();
   const dispatch = useAppDispatch();
   const post = useAppSelector(selectPost);
-  const [isLike, setIsLike] = useState(false);
+  const profile = useAppSelector(selectProfile);
+  const [comment, setComment] = useState("");
+
   useEffect(() => {
     if (id) {
       dispatch(getPost(id));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const toggleLike = () => {
+    if (post?.isLike) {
+      dispatch(dislikePost({ userId: profile?.id || "", postId: id || "" }));
+    } else {
+      dispatch(likePost({ userId: profile?.id || "", postId: id || "" }));
+    }
+  };
+
+  const sendComment = () => {
+    if (comment.trim() !== "" && id) {
+      dispatch(
+        addComment({
+          author: profile?.username || profile?.id || "Неизвестно",
+          date: new Date(Date.now()).toString(),
+          message: comment,
+          postId: id,
+        })
+      );
+    }
+  };
 
   return (
     <div className={s.overflowContainer}>
@@ -36,7 +67,14 @@ export default function PostView() {
             Back
           </div>
           <div className={s.title}>{post?.title}</div>
-          <img className={s.img} src={post?.imageUrl} alt="" />
+          <img
+            className={s.img}
+            src={
+              post?.imageUrl ||
+              "https://allegrobowling.ru/wp-content/uploads/a/f/a/afa692b0f3d4d0338dca1b38e0061637.jpeg"
+            }
+            alt=""
+          />
 
           <div className={s.info}>
             {post?.createdAt && (
@@ -65,21 +103,38 @@ export default function PostView() {
         <div className={s.infoUsers}>
           <div className={s.infoUsers_item}>
             <LikeImg
-              onClick={() => setIsLike((prev) => !prev)}
-              className={`${s.imgLike} ${isLike ? s.activeLike : ""}`}
+              onClick={toggleLike}
+              className={`${s.imgLike} ${post?.isLike ? s.activeLike : ""}`}
             />
-            <span>150</span>
+            <span>{post?.likesCount.count}</span>
           </div>
           <div className={s.infoUsers_item}>
             <CommentImg className={s.imgComment} />
-            <span>5</span>
+            <span>{post?.comments.count}</span>
           </div>
         </div>
         <div style={{ padding: "25px 80px" }}>Комментарии</div>
-        <Textarea style={{ margin: "0px 80px", height: "100px" }} />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "8px",
+            margin: "0px 80px",
+          }}
+        >
+          <Textarea
+            value={comment}
+            onChange={(e) => setComment(e.target.value)}
+            placeholder="Писать тут...."
+            style={{ height: "100px" }}
+          />
+          <Button onClick={sendComment} variant="variant">
+            Отправить
+          </Button>
+        </div>
         <div className={s.blockComments}>
-          {[1, 2, 3, 4, 5].map((i) => (
-            <Comment key={i} />
+          {post?.comments.comments.map((el) => (
+            <Comment {...el} key={el._id} />
           ))}
         </div>
         {!post && <Loader />}

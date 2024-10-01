@@ -5,7 +5,7 @@ import { selectNotification } from "./NotificationSlice";
 
 export default function Notification() {
   const notifications = useAppSelector(selectNotification);
-
+  console.log(notifications);
   return (
     <div className={`${s.notifications}`}>
       {notifications &&

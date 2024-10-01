@@ -3,12 +3,11 @@ import s from "./CreatePost.module.css";
 import Input from "../../components/UI/Input/Input";
 import Textarea from "../../components/UI/Textarea/Textarea";
 import Button from "../../components/UI/Button/Button";
-import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../common/store/store";
 import { createPost } from "./CreatePostSlice";
+import CreatePostDefault from "../../assets/img/createPostDefault.jpg";
 
 export default function CreatePost() {
-  const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
   const [postInfo, setPostInfo] = useState<{
@@ -32,10 +31,7 @@ export default function CreatePost() {
         <div className={s.imagePost}>
           <img
             className={s.img}
-            src={
-              postInfo.image?.previewUrl ||
-              "https://s3.us-west-1.amazonaws.com/screenshots.templatemonster.com/templates/8518/scr/1525340823317_preview3.png"
-            }
+            src={postInfo.image?.previewUrl || CreatePostDefault}
             alt="ava"
           />
           <input
@@ -68,7 +64,6 @@ export default function CreatePost() {
                 image: postInfo.image?.file,
               })
             );
-            navigate("/home");
           }}
           variant="variant"
         >

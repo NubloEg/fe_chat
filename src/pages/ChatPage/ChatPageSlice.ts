@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../common/store/store";
 
 interface ChatPageState {
-  users?: { id: string; imageUrl: string; username: string }[];
+  users?: { id: string; avatarUrl: string; username: string }[];
 }
 
 const initialState: ChatPageState = {};
@@ -17,7 +17,7 @@ export const chatPageSlice = createSlice({
     getUsersCompleted: (
       state,
       action: PayloadAction<
-        { id: string; imageUrl: string; username: string }[]
+        { id: string; avatarUrl: string; username: string }[]
       >
     ) => {
       return { ...state, users: action.payload };

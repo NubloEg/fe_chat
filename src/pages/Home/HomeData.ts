@@ -8,4 +8,16 @@ export interface PostData {
   tags: string[];
   viesCount: number;
   user: UserProfileData;
+  createdAt: string;
+  likesCount: { count: number; users: string[] };
+  comments: {
+    comments: Array<{
+      message: string;
+      date: string;
+      author: string;
+      authorId: string;
+      _id: string;
+    }>;
+    count: number;
+  };
 }

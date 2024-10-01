@@ -9,6 +9,7 @@ import createPostSlice from "../../pages/CreatePost/CreatePostSlice";
 import postViewSlice from "../../pages/PostView/PostViewSlice";
 import loaderSlice from "../../components/Loader/LoaderSlice";
 import chatPageSlice from "../../pages/ChatPage/ChatPageSlice";
+import redirectSlice from "../redirect/RedirectSlice";
 
 export function createStore() {
   const sagaMiddleware = createSagaMiddleware();
@@ -22,6 +23,7 @@ export function createStore() {
       postView: postViewSlice,
       notification: notificationSlice,
       loading: loaderSlice,
+      redirect: redirectSlice,
     },
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware().concat(sagaMiddleware),

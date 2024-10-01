@@ -10,7 +10,7 @@ export function* chatPageSaga() {
 
 export function* getUsers() {
   try {
-    const users: { id: string; imageUrl: string; username: string }[] =
+    const users: { id: string; avatarUrl: string; username: string }[] =
       yield call(getUsersApi);
     yield put(chatPageSlice.actions.getUsersCompleted(users));
   } catch (err) {

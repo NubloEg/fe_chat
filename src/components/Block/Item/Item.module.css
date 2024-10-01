@@ -1,58 +1,58 @@
-.conversation{
-    border-bottom: 1px solid #b4abab89;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 8px 20px;
-    cursor: pointer;
-    transition: all 0.2s;
+.conversation {
+  border-bottom: 1px solid #b4abab89;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
-.conversation:hover{
-    background-color: #612dd144;
+.conversation:hover {
+  background-color: #612dd144;
 }
 
-.conversation img{
-    border-radius: 50%;
-    height: 40px;
-    border:1px solid black;
+.conversation img {
+  border-radius: 50%;
+  height: 40px;
+  aspect-ratio: 1;
+  border: 1px solid black;
 }
 
-.conversation:last-child{
-    border-bottom: none;
+.conversation:last-child {
+  border-bottom: none;
 }
 
-.conversationInfo{
-    width: 100%;
-    height: 36px;
-    display: flex;
-    justify-content: space-between;
+.conversationInfo {
+  width: 100%;
+  height: 36px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.conversationInfo__left{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.conversationInfo__left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.conversationName{
-    font-weight: 700;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
+.conversationName {
+  font-weight: 700;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.conversationLastMessage{
-    color:#3030309c;
-    font-size: 14px;
+.conversationLastMessage {
+  color: #3030309c;
+  font-size: 14px;
 }
 
-.conversationInfo__right{
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-    justify-content: space-between;
+.conversationInfo__right {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  justify-content: space-between;
 }
 
-.conversationLastTime{
-    color: #7C7C7C;
+.conversationLastTime {
+  color: #7c7c7c;
 }

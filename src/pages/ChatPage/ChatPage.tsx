@@ -54,20 +54,22 @@ export default function ChatPage() {
   }, [searchText]);
 
   const mapper = (
-    chats: Array<{ id: string; imageUrl: string; username: string }>
+    chats: Array<{ id: string; avatarUrl: string; username: string }>
   ) => {
     return chats.map((elem, i) => (
       <Item
-        onClick={() =>
+        onClick={() => {
           setChatNow({
             id: i,
             name: elem.username,
             status: "Online",
             lastDate: "",
-          })
-        }
+          });
+          setIsOpenChat(true);
+        }}
         key={elem.id}
         name={elem.username}
+        avatar={elem.avatarUrl}
       />
     ));
   };

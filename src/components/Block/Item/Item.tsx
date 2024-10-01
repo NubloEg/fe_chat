@@ -1,20 +1,16 @@
-import React from "react";
 import s from "./Item.module.css";
+import user from "../../../assets/icons/user.png";
 
 interface Props {
   onClick?: () => void;
   name: string;
+  avatar: string;
 }
 
-export default function Item({ onClick, name }: Props) {
+export default function Item({ onClick, name, avatar }: Props) {
   return (
     <div onClick={onClick} className={s.conversation}>
-      <img
-        src={
-          "https://images.pngnice.com/download/2007/User-Account-Person-PNG-File.png"
-        }
-        alt=""
-      />
+      <img src={avatar || user} alt="" />
       <div className={s.conversationInfo}>
         <div className={s.conversationInfo__left}>
           <div className={s.conversationName}>{name}</div>

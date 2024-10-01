@@ -70,7 +70,7 @@ export default function Auth() {
                   onChange={(e) =>
                     setAuthInfo({ ...authInfo, email: e.target.value })
                   }
-                  type="text"
+                  type="email"
                   title="Email"
                 />
                 <Input

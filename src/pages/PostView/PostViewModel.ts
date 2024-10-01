@@ -9,4 +9,16 @@ export interface PostModel {
   viesCount: number;
   user: UserProfileModel;
   createdAt: string;
+  likesCount: { count: number; users: Array<string> };
+  isLike: boolean;
+  comments: {
+    comments: Array<{
+      message: string;
+      date: string;
+      author: string;
+      authorId: string;
+      _id: string;
+    }>;
+    count: number;
+  };
 }

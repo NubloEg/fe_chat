@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Post from "../../components/Post/Post";
 import s from "./Home.module.css";
 import Button from "../../components/UI/Button/Button";
@@ -35,8 +35,8 @@ export default function Home() {
               id={el.id}
               key={el.id}
               author={el.user.username}
-              comments={6}
-              likes={el.viesCount}
+              comments={el.comments.count}
+              likes={el.likesCount.count}
               image={el.imageUrl}
               description={el.text}
               title={el.title}
