@@ -19,7 +19,8 @@
 .posts {
   padding: 0 80px;
   height: calc(100% - 50px);
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .posts::-webkit-scrollbar-track {

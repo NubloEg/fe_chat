@@ -118,6 +118,13 @@
   width: 100%;
 }
 
+.createCommentBox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 80px;
+}
+
 @media (max-width: 950px) {
   .title {
     font-size: 34px;
@@ -133,6 +140,10 @@
     display: table;
     padding-right: 0px;
     border-radius: 0px;
+  }
+
+  .createCommentBox {
+    margin: 0 5%;
   }
 
   .postHeader {
@@ -151,6 +162,7 @@
   .description {
     font-size: 18px;
     line-height: 26px;
+    word-break: break-word;
   }
 }
 

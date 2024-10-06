@@ -25,6 +25,7 @@ export default function ChatPage() {
 
   useEffect(() => {
     setAllChats(users || []);
+    searchFilter();
   }, [users]);
 
   useEffect(() => {
@@ -81,7 +82,20 @@ export default function ChatPage() {
           onChange={(e) => setSearchText(e.target.value)}
         />
         <Block title="Users" items={mapper(allChats)}>
-          {allChats.length === 0 && <Loader />}
+          {allChats.length === 0 && searchText === "" && <Loader />}
+          {allChats.length === 0 && searchText !== "" && (
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                fontSize: "32px",
+                color: "gray",
+              }}
+            >
+              Пусто!
+            </div>
+          )}
         </Block>
       </div>
       {chatNow.name && (

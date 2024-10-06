@@ -114,14 +114,7 @@ export default function PostView() {
           </div>
         </div>
         <div style={{ padding: "25px 80px" }}>Комментарии</div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "8px",
-            margin: "0px 80px",
-          }}
-        >
+        <div className={s.createCommentBox}>
           <Textarea
             value={comment}
             onChange={(e) => setComment(e.target.value)}

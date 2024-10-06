@@ -6,70 +6,68 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  z-index: 2;
 }
 
-.chatInfo{
+.chatInfo {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px 0px;
-  border-bottom: 1px solid #b4abab83; 
+  border-bottom: 1px solid #b4abab83;
 }
 
-.chatPersonInfo{
+.chatPersonInfo {
   display: flex;
-  gap:12px;
+  gap: 12px;
 }
 
-.chatPersonInfo img{
+.chatPersonInfo img {
   height: 35px;
 }
 
-.personInfoText{
+.personInfoText {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-
-.messanger{
+.messanger {
   height: 100%;
-  overflow-y:auto; ;
+  overflow-y: auto;
   padding: 10px;
 }
 
-.options{
+.options {
   cursor: pointer;
 }
 
-.back{
+.back {
   display: none;
 }
 
-@media(max-width:991px){
-  .chat{
+@media (max-width: 991px) {
+  .chat {
     position: fixed;
     height: 100%;
     border-radius: 0px;
     transition: all 0.3s;
   }
 
-  .open{
+  .open {
     left: 0;
-    
   }
 
-  .close{
+  .close {
     left: 100%;
-
   }
 
-  .chatInfo{
+  .chatInfo {
     margin-left: 70px;
     padding-top: 10px;
   }
 
-  .back{
+  .back {
     display: block;
     text-align: right;
   }
