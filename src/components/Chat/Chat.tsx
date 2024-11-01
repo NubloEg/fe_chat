@@ -11,10 +11,25 @@ interface Props {
 
 export default function Chat({ isOpen, setIsOpenChat, chat }: Props) {
   const messages = [
-    { id: 1, message: "Привет", type: "other", date: "Today, 8.30pm" },
-    { id: 2, message: "Привет!", type: "", date: "Today, 8.30pm" },
-    { id: 3, message: "Как ты?", type: "other", date: "Today, 8.30pm" },
-    { id: 4, message: "Все супер! Ты как?", type: "", date: "Today, 8.30pm" },
+    {
+      id: 1,
+      message: "Привет",
+      type: "other",
+      date: "Mon Oct 20 2024 20:59:44",
+    },
+    { id: 2, message: "Привет!", type: "", date: "Mon Oct 27 2024 22:59:44" },
+    {
+      id: 3,
+      message: "Как ты?",
+      type: "other",
+      date: "Mon Oct 28 2024 12:59:44",
+    },
+    {
+      id: 4,
+      message: "Все супер! Ты как?",
+      type: "",
+      date: "Mon Oct 28 2024 16:59:44",
+    },
   ];
 
   return (
@@ -31,7 +46,9 @@ export default function Chat({ isOpen, setIsOpenChat, chat }: Props) {
           />
           <div className={s.personInfoText}>
             <div className="chatName">{chat.name}</div>
-            <div className="chatLastDate">{chat.status} - Last seen,{chat.lastDate}</div>
+            <div className="chatLastDate">
+              {chat.status} - Last seen,{chat.lastDate}
+            </div>
           </div>
         </div>
         <img src={options} alt="" className={s.options} />
