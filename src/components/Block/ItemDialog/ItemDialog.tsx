@@ -1,4 +1,4 @@
-import s from "./Item.module.css";
+import s from "./ItemDialog.module.css";
 import user from "../../../assets/icons/user.png";
 import { formatDistanceToNow } from "date-fns";
 
@@ -8,7 +8,7 @@ interface Props {
   avatar: string;
 }
 
-export default function Item({ onClick, name, avatar }: Props) {
+export default function ItemDialog({ onClick, name, avatar }: Props) {
   return (
     <div onClick={onClick} className={s.conversation}>
       <img src={avatar || user} alt="" />

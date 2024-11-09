@@ -1,20 +1,33 @@
 import Search from "../../components/UI/Search/Search";
 import Block from "../../components/Block/Block";
-import Item from "../../components/Block/Item/Item";
+import Item from "../../components/Block/ItemDialog/ItemDialog";
 import Chat from "../../components/Chat/Chat";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../common/store/store";
-import { getUsers, selectUsers } from "./ChatPageSlice";
+import {
+  getDialogs,
+  getUsers,
+  selectDialogs,
+  selectUsers,
+} from "./ChatPageSlice";
 import Loader from "../../components/Loader/Loader";
+import Button from "../../components/UI/Button/Button";
+import Modal from "../../components/UI/Modal/Modal";
+import ItemUser from "../../components/Block/ItemUser/ItemUser";
+import { DialogModel } from "./ChatPageModel";
 
 export default function ChatPage() {
   const navigate = useNavigate();
   const [isOpenChat, setIsOpenChat] = useState(false);
   const dispatch = useAppDispatch();
   const users = useAppSelector(selectUsers);
-  const [allChats, setAllChats] = useState(users || []);
+  const dialogs = useAppSelector(selectDialogs);
+  const [allUsers, setAllUsers] = useState(users || []);
+  const [allDialogs, setAllDialogs] = useState(dialogs || []);
   const [searchText, setSearchText] = useState("");
+
+  console.log(allDialogs, "allDialogs");
 
   const [chatNow, setChatNow] = useState<{
     name: string;
@@ -24,15 +37,19 @@ export default function ChatPage() {
   }>({ id: 0, lastDate: "27.01.22", name: "", status: "Online" });
 
   useEffect(() => {
-    setAllChats(users || []);
+    setAllDialogs(dialogs || []);
     searchFilter();
+  }, [dialogs]);
+
+  useEffect(() => {
+    setAllUsers(users || []);
   }, [users]);
 
   useEffect(() => {
     if (!sessionStorage.getItem("token")) {
       navigate("/login");
     } else {
-      dispatch(getUsers());
+      dispatch(getDialogs());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -40,13 +57,13 @@ export default function ChatPage() {
   const searchFilter = () => {
     let result = [];
     if (searchText && users) {
-      result = users?.filter((a) =>
-        a.username.toLowerCase().includes(searchText.toLowerCase())
+      result = allDialogs?.filter((a) =>
+        a.partner.username.toLowerCase().includes(searchText.toLowerCase())
       );
     } else {
-      result = users || [];
+      result = allDialogs || [];
     }
-    setAllChats(result);
+    setAllDialogs(result);
   };
 
   useEffect(() => {
@@ -54,19 +71,33 @@ export default function ChatPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchText]);
 
-  const mapper = (
-    chats: Array<{ id: string; avatarUrl: string; username: string }>
-  ) => {
-    return chats.map((elem, i) => (
+  const mapperDialogs = (dialogs: Array<DialogModel>) => {
+    return dialogs.map((elem, i) => (
       <Item
         onClick={() => {
           setChatNow({
             id: i,
-            name: elem.username,
+            name: elem.partner.username,
             status: "Online",
             lastDate: "",
           });
           setIsOpenChat(true);
+        }}
+        key={elem.id}
+        name={elem.partner.username}
+        avatar={elem.partner.avatarUrl}
+      />
+    ));
+  };
+
+  const mapperUsers = (
+    dialogs: Array<{ id: string; avatarUrl: string; username: string }>
+  ) => {
+    return dialogs.map((elem, i) => (
+      <ItemUser
+        onClick={() => {
+          console.log("create dialog");
+          setOpen(false);
         }}
         key={elem.id}
         name={elem.username}
@@ -74,6 +105,9 @@ export default function ChatPage() {
       />
     ));
   };
+
+  const [isOpen, setOpen] = useState(false);
+
   return (
     <>
       <div className="itemChat">
@@ -81,19 +115,30 @@ export default function ChatPage() {
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />
-        <Block title="Users" items={mapper(allChats)}>
-          {allChats.length === 0 && searchText === "" && <Loader />}
-          {allChats.length === 0 && searchText !== "" && (
+        <Block title="Dialogs" items={mapperDialogs(allDialogs)}>
+          {allDialogs === undefined && searchText === "" && <Loader />}
+          {allDialogs.length === 0 && (
             <div
               style={{
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                height: "calc(100% - 60px)",
                 fontSize: "32px",
                 color: "gray",
               }}
             >
-              Пусто!
+              <Button
+                onClick={() => {
+                  if (users === undefined) {
+                    dispatch(getUsers());
+                  }
+                  setOpen(true);
+                }}
+                variant="variant"
+              >
+                Создать диалог
+              </Button>
             </div>
           )}
         </Block>
@@ -105,6 +150,20 @@ export default function ChatPage() {
           isOpen={isOpenChat}
         />
       )}
+      <Modal onClose={setOpen} isOpen={isOpen}>
+        <Block style={{ maxWidth: "450px" }} title="Users">
+          <p style={{ padding: "8px 12px" }}>
+            Выберите пользователя для диалога
+          </p>
+          <div style={{ maxHeight: "350px", overflow: "auto" }}>
+            {allUsers.length > 0 ? (
+              mapperUsers(allUsers)
+            ) : (
+              <div style={{ textAlign: "center" }}>Load</div>
+            )}
+          </div>
+        </Block>
+      </Modal>
     </>
   );
 }

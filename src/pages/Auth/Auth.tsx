@@ -87,7 +87,7 @@ export default function Auth() {
                   <span onClick={() => setIsLogin(!isLogin)}>Register</span>
                 </div>
                 <Button
-                  variant={isAuth?.["signIn"] ? "disabled" : ""}
+                  variant={isAuth?.["signIn"] ? "disabled" : "default"}
                   onClick={login}
                 >
                   {!isAuth?.["signIn"] ? "Login" : "Load..."}
@@ -128,7 +128,7 @@ export default function Auth() {
                   <span onClick={() => setIsLogin(!isLogin)}>Login</span>
                 </div>
                 <Button
-                  variant={isAuth?.["signUp"] ? "disabled" : ""}
+                  variant={isAuth?.["signUp"] ? "disabled" : "default"}
                   onClick={() => register()}
                 >
                   {!isAuth?.["signUp"] ? "Register" : "Load..."}
