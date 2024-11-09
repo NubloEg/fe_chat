@@ -1,17 +1,17 @@
-21:53:40.955 Chromatic CLI v11.18.0
+22:05:51.747 Chromatic CLI v11.18.0
              https://www.chromatic.com/docs/cli 
  
-21:53:40.998 Authenticating with Chromatic 
-21:53:40.998     → Connecting to https://index.chromatic.com
-21:53:41.592 Authenticated with Chromatic
+22:05:51.789 Authenticating with Chromatic 
+22:05:51.789     → Connecting to https://index.chromatic.com
+22:05:52.290 Authenticated with Chromatic
                  → Using project token '****************ba8a'
-21:53:41.593 Retrieving git information
-21:53:41.884 git info: {"commit":{"commit":"c37803ca0bf18fc6d73a232fb14928f942e6bf18","committedAt":1731176687000,"committerEmail":"gaf555mailru@yandex.ru","committerName":"Egor Dovgalev Local"},"branch":"feature/test-screenshot","fromCI":false}
-21:53:42.093     → Command failed with exit code 255: git log --reverse --format=%cd --date=iso | head -1
+22:05:52.291 Retrieving git information
+22:05:52.595 git info: {"commit":{"commit":"651ba90915bbea4599c5546a016e9b6d28e72731","committedAt":1731178543000,"committerEmail":"gaf555mailru@yandex.ru","committerName":"Egor Dovgalev Local"},"branch":"feature/test-screenshot","fromCI":false}
+22:05:52.797     → Command failed with exit code 255: git log --reverse --format=%cd --date=iso | head -1
              "head" �� ���� ����७��� ��� ���譥�
              ��������, �ᯮ��塞�� �ணࠬ��� ��� ������ 䠩���.
 
-21:53:42.107 × Failed to retrieve git information
+22:05:52.811 × Failed to retrieve git information
              Command failed with exit code 255: git log --reverse --format=%cd --date=iso | head -1
              "head" �� ���� ����७��� ��� ���譥�
              ��������, �ᯮ��塞�� �ணࠬ��� ��� ������ 䠩���.
@@ -22,8 +22,8 @@
              
              Please provide us with the above CLI output and the following info:
              {
-               "timestamp": "2024-11-09T18:53:42.103Z",
-               "sessionId": "6ad47063-e8e0-4ba5-bd45-28c67111f5ff",
+               "timestamp": "2024-11-09T19:05:52.808Z",
+               "sessionId": "76faecd6-527c-44b3-a685-e728f316447f",
                "gitVersion": "2.42.0.windows.2",
                "gitBranch": "feature/test-screenshot",
                "fromCI": false,
@@ -66,4 +66,4 @@
                  at async Object.Ao [as y] (D:\project\React\chat_fe\node_modules\chromatic\dist\chunk-H5EV6FHP.js:36:2095)
                  at async Ozn (D:\project\React\chat_fe\node_modules\chromatic\dist\chunk-3AQSJLAJ.js:1175:524)
                  at async hae.task (D:\project\React\chat_fe\node_modules\chromatic\dist\chunk-3AQSJLAJ.js:950:2555)
-21:53:42.311 i Wrote Chromatic diagnostics report to chromatic-diagnostics.json
+22:05:53.305 i Wrote Chromatic diagnostics report to chromatic-diagnostics.json

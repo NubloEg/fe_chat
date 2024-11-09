@@ -21,10 +21,10 @@
   },
   "git": {
     "version": "2.42.0.windows.2",
-    "gitUserEmail": "gaf555mailru@yandex.ru",
+    "gitUserEmail": "106815766+NubloEg@users.noreply.github.com",
     "uncommittedHash": "fatal: ambiguous argument 'diff': unknown revision or path not in the working tree.\nUse '--' to separate paths from revisions, like this:\n'git <command> [<revision>...] -- [<file>...]'\ne69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
-    "commit": "c37803ca0bf18fc6d73a232fb14928f942e6bf18",
-    "committedAt": 1731176687000,
+    "commit": "651ba90915bbea4599c5546a016e9b6d28e72731",
+    "committedAt": 1731178543000,
     "committerEmail": "gaf555mailru@yandex.ru",
     "committerName": "Egor Dovgalev Local",
     "branch": "feature/test-screenshot",
@@ -137,8 +137,8 @@
     "_id": "chat_fe@0.1.0"
   },
   "packagePath": "D:\\project\\React\\chat_fe\\package.json",
-  "sessionId": "6ad47063-e8e0-4ba5-bd45-28c67111f5ff",
-  "startedAt": 1731178421593,
+  "sessionId": "76faecd6-527c-44b3-a685-e728f316447f",
+  "startedAt": 1731179152291,
   "task": "gitInfo",
   "userError": false
 }
