@@ -1,7 +1,7 @@
 {
   "announcedBuild": {
-    "id": "67aee1c132d772aa7f49a337",
-    "number": 6,
+    "id": "67aee370e040fd24a0b37bcb",
+    "number": 8,
     "status": "ANNOUNCED",
     "autoAcceptChanges": false,
     "app": {
@@ -9,7 +9,7 @@
       "turboSnapAvailability": "UNAVAILABLE"
     }
   },
-  "buildCommand": "npm run deploy-storybook -- --output-dir=C:\\Users\\gaf55\\AppData\\Local\\Temp\\chromatic--16796-Cvp742vVogyt",
+  "buildCommand": "npm run deploy-storybook -- --output-dir=C:\\Users\\gaf55\\AppData\\Local\\Temp\\chromatic--5180-As9AMlTgTD3Y",
   "buildLogFile": "D:\\project\\React\\chat_fe\\build-storybook.log",
   "configuration": {
     "configFile": "chromatic.config.json",
@@ -37,11 +37,11 @@
     "gitUserEmail": "gaf555mailru@yandex.ru",
     "uncommittedHash": "fatal: ambiguous argument 'diff': unknown revision or path not in the working tree.\nUse '--' to separate paths from revisions, like this:\n'git <command> [<revision>...] -- [<file>...]'\ne69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
     "rootPath": "D:/project/React/chat_fe",
-    "commit": "29b2adb25953a8973b6a219a511cbac08e1ad818",
-    "committedAt": 1739513721000,
+    "commit": "e4c886b8520452d1eb1db5e7161dc89c7aa7a583",
+    "committedAt": 1739514349000,
     "committerEmail": "gaf555mailru@yandex.ru",
     "committerName": "NubloEg",
-    "branch": "feature/test-screenshot",
+    "branch": "stoory-chormatic-build",
     "slug": "nubloeg/fe_chat",
     "fromCI": false,
     "parentCommits": []
@@ -166,9 +166,9 @@
     "packageManager": "npm",
     "packageManagerVersion": "10.9.0"
   },
-  "sessionId": "85662692-ea39-4727-ba47-12dd7d9d46f7",
-  "sourceDir": "C:\\Users\\gaf55\\AppData\\Local\\Temp\\chromatic--16796-Cvp742vVogyt",
-  "startedAt": 1739514302863,
+  "sessionId": "98ae83c4-bca7-4bb9-8d94-68a80d230020",
+  "sourceDir": "C:\\Users\\gaf55\\AppData\\Local\\Temp\\chromatic--5180-As9AMlTgTD3Y",
+  "startedAt": 1739514733874,
   "storybook": {
     "addons": [
       {
