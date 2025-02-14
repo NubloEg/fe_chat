@@ -1,49 +1,48 @@
-08:40:53.290 Chromatic CLI v11.25.2
+09:24:55.683 Chromatic CLI v11.25.2
              https://www.chromatic.com/docs/cli 
  
-08:40:53.388 Authenticating with Chromatic 
-08:40:53.390     → Connecting to https://index.chromatic.com
-08:40:54.045 Authenticated with Chromatic
+09:24:55.782 Authenticating with Chromatic 
+09:24:55.782     → Connecting to https://index.chromatic.com
+09:24:56.489 Authenticated with Chromatic
                  → Using project token '****************ba8a'
-08:40:54.046 Retrieving git information
-08:40:54.836 git info: {"commit":{"commit":"ae3bb924227d6636c8de71c26d397e86f65508fa","committedAt":1731179197000,"committerEmail":"gaf555mailru@yandex.ru","committerName":"NubloEg"},"branch":"feature/test-screenshot","fromCI":false}
-08:40:56.554 App firstBuild: %o, lastBuild: %o null null
-08:40:56.555 App has no builds, returning []
-08:40:56.556 Found parentCommits:
-08:40:57.018 Retrieved git information
-                 → Commit 'ae3bb92' on branch 'feature/test-screenshot'; no ancestor found
-08:40:57.019 Collecting Storybook metadata
-08:40:57.021 {"storybookV6error":{"code":"MODULE_NOT_FOUND","requireStack":["D:\\project\\React\\chat_fe\\node_modules\\chromatic\\dist\\chunk-TKGT252T.js","D:\\project\\React\\chat_fe\\node_modules\\chromatic\\dist\\bin.js"]}}
-08:40:57.071 {"configDirectory":".storybook","mainConfig":{"code":"import type { StorybookConfig } from \"@storybook/react-webpack5\";\r\n\r\nconst config: StorybookConfig = {\r\n  stories: [\"../src/**/*.mdx\", \"../src/**/*.stories.@(js|jsx|mjs|ts|tsx)\"],\r\n\r\n  addons: [\r\n    \"@storybook/addon-links\",\r\n    \"@storybook/addon-essentials\",\r\n    \"@storybook/preset-create-react-app\",\r\n    \"@storybook/addon-onboarding\",\r\n    \"@storybook/addon-interactions\",\r\n    \"@chromatic-com/storybook\"\r\n  ],\r\n\r\n  framework: {\r\n    name: \"@storybook/react-webpack5\",\r\n    options: {\r\n      builder: {\r\n        useSWC: true,\r\n      },\r\n    },\r\n  },\r\n\r\n  docs: {},\r\n\r\n  staticDirs: [\"..\\\\public\"],\r\n\r\n  typescript: {\r\n    reactDocgen: \"react-docgen-typescript\"\r\n  }\r\n};\r\nexport default config;\r\n"}}
-08:40:57.094 [{"status":"fulfilled","value":{"addons":[{"name":"links","packageName":"@storybook/addon-links","packageVersion":"^8.4.2"},{"name":"essentials","packageName":"@storybook/addon-essentials","packageVersion":"^8.4.2"},{"packageName":"@storybook/preset-create-react-app","packageVersion":"^8.4.2"},{"packageName":"@storybook/addon-onboarding","packageVersion":"^8.4.2"},{"name":"interactions","packageName":"@storybook/addon-interactions","packageVersion":"^8.4.2"},{"packageName":"@chromatic-com/storybook","packageVersion":"^3.2.2"}]}},{"status":"fulfilled","value":{}},{"status":"fulfilled","value":{"viewLayer":"@storybook/react-webpack5","version":"8.4.2"}},{"status":"fulfilled","value":{"builder":{"name":"@storybook/react-webpack5","packageVersion":"8.4.2"}}}]
-08:40:57.096 Collected Storybook metadata
-                 → Storybook 8.4.2 for @storybook/react Webpack5; using the @storybook/react-webpack5 builder (8.4.2); supported addons found: Links, Essentials, Interactions
-08:40:57.096 Initializing build
-08:40:57.098 Got environment:
+09:24:56.490 Retrieving git information
+09:24:57.403 git info: {"commit":{"commit":"29b2adb25953a8973b6a219a511cbac08e1ad818","committedAt":1739513721000,"committerEmail":"gaf555mailru@yandex.ru","committerName":"NubloEg"},"branch":"feature/test-screenshot","fromCI":false}
+09:24:59.423 App firstBuild: %o, lastBuild: %o null null
+09:24:59.424 App has no builds, returning []
+09:24:59.425 Found parentCommits:
+09:24:59.875 Retrieved git information
+                 → Commit '29b2adb' on branch 'feature/test-screenshot'; no ancestor found
+09:24:59.876 Collecting Storybook metadata
+09:24:59.879 {"storybookV6error":{"code":"MODULE_NOT_FOUND","requireStack":["D:\\project\\React\\chat_fe\\node_modules\\chromatic\\dist\\chunk-TKGT252T.js","D:\\project\\React\\chat_fe\\node_modules\\chromatic\\dist\\bin.js"]}}
+09:24:59.930 {"configDirectory":".storybook","mainConfig":{"code":"import type { StorybookConfig } from \"@storybook/react-webpack5\";\r\n\r\nconst config: StorybookConfig = {\r\n  stories: [\"../src/**/*.mdx\", \"../src/**/*.stories.@(js|jsx|mjs|ts|tsx)\"],\r\n\r\n  addons: [\r\n    \"@storybook/addon-links\",\r\n    \"@storybook/addon-essentials\",\r\n    \"@storybook/preset-create-react-app\",\r\n    \"@storybook/addon-onboarding\",\r\n    \"@storybook/addon-interactions\",\r\n    \"@chromatic-com/storybook\"\r\n  ],\r\n\r\n  framework: {\r\n    name: \"@storybook/react-webpack5\",\r\n    options: {\r\n      builder: {\r\n        useSWC: true,\r\n      },\r\n    },\r\n  },\r\n\r\n  docs: {},\r\n\r\n  staticDirs: [\"..\\\\public\"],\r\n\r\n  typescript: {\r\n    reactDocgen: \"react-docgen-typescript\"\r\n  }\r\n};\r\nexport default config;\r\n"}}
+09:24:59.962 [{"status":"fulfilled","value":{"addons":[{"name":"links","packageName":"@storybook/addon-links","packageVersion":"^8.4.2"},{"name":"essentials","packageName":"@storybook/addon-essentials","packageVersion":"^8.4.2"},{"packageName":"@storybook/preset-create-react-app","packageVersion":"^8.4.2"},{"packageName":"@storybook/addon-onboarding","packageVersion":"^8.4.2"},{"name":"interactions","packageName":"@storybook/addon-interactions","packageVersion":"^8.4.2"},{"packageName":"@chromatic-com/storybook","packageVersion":"^3.2.2"}]}},{"status":"fulfilled","value":{}},{"status":"fulfilled","value":{"viewLayer":"react","version":"8.4.2"}},{"status":"fulfilled","value":{"builder":{"name":"@storybook/react-webpack5","packageVersion":"8.4.2"}}}]
+09:24:59.964 Collected Storybook metadata
+                 → Storybook 8.4.2 for React; using the @storybook/react-webpack5 builder (8.4.2); supported addons found: Links, Essentials, Interactions
+09:24:59.964 Initializing build
+09:24:59.966 Got environment:
              {}
-08:40:59.379 Initialized build
-                 → Build 2 initialized
-08:40:59.445 Building your Storybook
-08:40:59.446     → Running command: npm run deploy-storybook -- --output-dir=C:\Users\gaf55\AppData\Local\Temp\chromatic--24328-g40j1aQlDyeb
-08:40:59.447 Running build command: npm run deploy-storybook -- --output-dir=C:\Users\gaf55\AppData\Local\Temp\chromatic--24328-g40j1aQlDyeb
-08:40:59.448 Runtime metadata: {
+09:25:02.863 Initialized build
+                 → Build 6 initialized
+09:25:02.923 Building your Storybook
+09:25:02.924     → Running command: npm run deploy-storybook -- --output-dir=C:\Users\gaf55\AppData\Local\Temp\chromatic--16796-Cvp742vVogyt
+09:25:02.925 Running build command: npm run deploy-storybook -- --output-dir=C:\Users\gaf55\AppData\Local\Temp\chromatic--16796-Cvp742vVogyt
+09:25:02.926 Runtime metadata: {
                "nodePlatform": "win32",
                "nodeVersion": "18.18.1",
                "packageManager": "npm",
                "packageManagerVersion": "10.9.0"
              }
-08:41:01.546 The CLI tried to run your deploy-storybook script, but the command failed. This indicates a problem with your Storybook. Here's what to do:
+09:25:05.595 The CLI tried to run your deploy-storybook script, but the command failed. This indicates a problem with your Storybook. Here's what to do:
              
              - Check the Storybook build log printed below.
              - Run npm run deploy-storybook or yarn deploy-storybook yourself and make sure it outputs a valid Storybook by opening the generated index.html in your browser.
              - Review the build-storybook CLI options at https://storybook.js.org/docs/configurations/cli-options/#for-build-storybook
              
-             Command failed with exit code 1: npm run deploy-storybook -- --output-dir=C:\Users\gaf55\AppData\Local\Temp\chromatic--24328-g40j1aQlDyeb
-             "gh-pages" �� ���� ����७��� ��� ���譥�
-             ��������, �ᯮ��塞�� �ணࠬ��� ��� ������ 䠩���.
+             Command failed with exit code 1: npm run deploy-storybook -- --output-dir=C:\Users\gaf55\AppData\Local\Temp\chromatic--16796-Cvp742vVogyt
+             error: unknown option '--output-dir=C:\Users\gaf55\AppData\Local\Temp\chromatic--16796-Cvp742vVogyt'
              
              i Build command:
-             npm run deploy-storybook -- --output-dir=C:\Users\gaf55\AppData\Local\Temp\chromatic--24328-g40j1aQlDyeb
+             npm run deploy-storybook -- --output-dir=C:\Users\gaf55\AppData\Local\Temp\chromatic--16796-Cvp742vVogyt
              
              i Runtime metadata:
              {
@@ -58,6 +57,6 @@
              
              
              > chat_fe@0.1.0 deploy-storybook
-             > gh-pages -d storybook-static --output-dir=C:\Users\gaf55\AppData\Local\Temp\chromatic--24328-g40j1aQlDyeb
-08:41:01.548     → Command failed: npm run deploy-storybook -- --output-dir=C:\Users\gaf55\AppData\Local\Temp\chromatic--24328-g40j1aQlDyeb
-08:41:01.610 i Wrote Chromatic diagnostics report to chromatic-diagnostics.json
+             > gh-pages -d storybook-static --output-dir=C:\Users\gaf55\AppData\Local\Temp\chromatic--16796-Cvp742vVogyt
+09:25:05.597     → Command failed: npm run deploy-storybook -- --output-dir=C:\Users\gaf55\AppData\Local\Temp\chromatic--16796-Cvp742vVogyt
+09:25:05.656 i Wrote Chromatic diagnostics report to chromatic-diagnostics.json

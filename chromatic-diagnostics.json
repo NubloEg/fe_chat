@@ -1,7 +1,7 @@
 {
   "announcedBuild": {
-    "id": "67aed76e3dd572768668ce05",
-    "number": 2,
+    "id": "67aee1c132d772aa7f49a337",
+    "number": 6,
     "status": "ANNOUNCED",
     "autoAcceptChanges": false,
     "app": {
@@ -9,7 +9,7 @@
       "turboSnapAvailability": "UNAVAILABLE"
     }
   },
-  "buildCommand": "npm run deploy-storybook -- --output-dir=C:\\Users\\gaf55\\AppData\\Local\\Temp\\chromatic--24328-g40j1aQlDyeb",
+  "buildCommand": "npm run deploy-storybook -- --output-dir=C:\\Users\\gaf55\\AppData\\Local\\Temp\\chromatic--16796-Cvp742vVogyt",
   "buildLogFile": "D:\\project\\React\\chat_fe\\build-storybook.log",
   "configuration": {
     "configFile": "chromatic.config.json",
@@ -37,8 +37,8 @@
     "gitUserEmail": "gaf555mailru@yandex.ru",
     "uncommittedHash": "fatal: ambiguous argument 'diff': unknown revision or path not in the working tree.\nUse '--' to separate paths from revisions, like this:\n'git <command> [<revision>...] -- [<file>...]'\ne69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
     "rootPath": "D:/project/React/chat_fe",
-    "commit": "ae3bb924227d6636c8de71c26d397e86f65508fa",
-    "committedAt": 1731179197000,
+    "commit": "29b2adb25953a8973b6a219a511cbac08e1ad818",
+    "committedAt": 1739513721000,
     "committerEmail": "gaf555mailru@yandex.ru",
     "committerName": "NubloEg",
     "branch": "feature/test-screenshot",
@@ -141,10 +141,10 @@
       "@storybook/react": "^8.4.2",
       "@storybook/react-webpack5": "^8.4.2",
       "@storybook/test": "^8.4.2",
-      "chromatic": "^11.25.3",
+      "chromatic": "^11.25.2",
       "eslint-plugin-storybook": "^0.11.0",
       "prop-types": "^15.8.1",
-      "storybook": "^8.4.2",
+      "storybook": "^8.5.5",
       "webpack": "^5.89.0"
     },
     "resolutions": {
@@ -166,9 +166,9 @@
     "packageManager": "npm",
     "packageManagerVersion": "10.9.0"
   },
-  "sessionId": "cd4d7a73-62b2-4262-b301-28d02f97654c",
-  "sourceDir": "C:\\Users\\gaf55\\AppData\\Local\\Temp\\chromatic--24328-g40j1aQlDyeb",
-  "startedAt": 1739511659380,
+  "sessionId": "85662692-ea39-4727-ba47-12dd7d9d46f7",
+  "sourceDir": "C:\\Users\\gaf55\\AppData\\Local\\Temp\\chromatic--16796-Cvp742vVogyt",
+  "startedAt": 1739514302863,
   "storybook": {
     "addons": [
       {
@@ -199,7 +199,7 @@
         "packageVersion": "^3.2.2"
       }
     ],
-    "viewLayer": "@storybook/react-webpack5",
+    "viewLayer": "react",
     "version": "8.4.2",
     "builder": {
       "name": "@storybook/react-webpack5",
