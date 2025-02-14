@@ -1,0 +1,4 @@
+
+> chat_fe@0.1.0 deploy-storybook
+> gh-pages -d storybook-static --output-dir=C:\Users\gaf55\AppData\Local\Temp\chromatic--24328-g40j1aQlDyeb
+

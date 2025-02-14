@@ -1,69 +1,63 @@
-22:05:51.747 Chromatic CLI v11.18.0
+08:40:53.290 Chromatic CLI v11.25.2
              https://www.chromatic.com/docs/cli 
  
-22:05:51.789 Authenticating with Chromatic 
-22:05:51.789     → Connecting to https://index.chromatic.com
-22:05:52.290 Authenticated with Chromatic
+08:40:53.388 Authenticating with Chromatic 
+08:40:53.390     → Connecting to https://index.chromatic.com
+08:40:54.045 Authenticated with Chromatic
                  → Using project token '****************ba8a'
-22:05:52.291 Retrieving git information
-22:05:52.595 git info: {"commit":{"commit":"651ba90915bbea4599c5546a016e9b6d28e72731","committedAt":1731178543000,"committerEmail":"gaf555mailru@yandex.ru","committerName":"Egor Dovgalev Local"},"branch":"feature/test-screenshot","fromCI":false}
-22:05:52.797     → Command failed with exit code 255: git log --reverse --format=%cd --date=iso | head -1
-             "head" �� ���� ����७��� ��� ���譥�
-             ��������, �ᯮ��塞�� �ணࠬ��� ��� ������ 䠩���.
-
-22:05:52.811 × Failed to retrieve git information
-             Command failed with exit code 255: git log --reverse --format=%cd --date=iso | head -1
-             "head" �� ���� ����७��� ��� ���譥�
-             ��������, �ᯮ��塞�� �ணࠬ��� ��� ������ 䠩���.
-             → View the full stacktrace below
-             
-             If you need help, please chat with us at https://www.chromatic.com/docs/cli for the fastest response.
-             You can also email the team at support@chromatic.com if chat is not an option.
-             
-             Please provide us with the above CLI output and the following info:
-             {
-               "timestamp": "2024-11-09T19:05:52.808Z",
-               "sessionId": "76faecd6-527c-44b3-a685-e728f316447f",
-               "gitVersion": "2.42.0.windows.2",
-               "gitBranch": "feature/test-screenshot",
-               "fromCI": false,
+08:40:54.046 Retrieving git information
+08:40:54.836 git info: {"commit":{"commit":"ae3bb924227d6636c8de71c26d397e86f65508fa","committedAt":1731179197000,"committerEmail":"gaf555mailru@yandex.ru","committerName":"NubloEg"},"branch":"feature/test-screenshot","fromCI":false}
+08:40:56.554 App firstBuild: %o, lastBuild: %o null null
+08:40:56.555 App has no builds, returning []
+08:40:56.556 Found parentCommits:
+08:40:57.018 Retrieved git information
+                 → Commit 'ae3bb92' on branch 'feature/test-screenshot'; no ancestor found
+08:40:57.019 Collecting Storybook metadata
+08:40:57.021 {"storybookV6error":{"code":"MODULE_NOT_FOUND","requireStack":["D:\\project\\React\\chat_fe\\node_modules\\chromatic\\dist\\chunk-TKGT252T.js","D:\\project\\React\\chat_fe\\node_modules\\chromatic\\dist\\bin.js"]}}
+08:40:57.071 {"configDirectory":".storybook","mainConfig":{"code":"import type { StorybookConfig } from \"@storybook/react-webpack5\";\r\n\r\nconst config: StorybookConfig = {\r\n  stories: [\"../src/**/*.mdx\", \"../src/**/*.stories.@(js|jsx|mjs|ts|tsx)\"],\r\n\r\n  addons: [\r\n    \"@storybook/addon-links\",\r\n    \"@storybook/addon-essentials\",\r\n    \"@storybook/preset-create-react-app\",\r\n    \"@storybook/addon-onboarding\",\r\n    \"@storybook/addon-interactions\",\r\n    \"@chromatic-com/storybook\"\r\n  ],\r\n\r\n  framework: {\r\n    name: \"@storybook/react-webpack5\",\r\n    options: {\r\n      builder: {\r\n        useSWC: true,\r\n      },\r\n    },\r\n  },\r\n\r\n  docs: {},\r\n\r\n  staticDirs: [\"..\\\\public\"],\r\n\r\n  typescript: {\r\n    reactDocgen: \"react-docgen-typescript\"\r\n  }\r\n};\r\nexport default config;\r\n"}}
+08:40:57.094 [{"status":"fulfilled","value":{"addons":[{"name":"links","packageName":"@storybook/addon-links","packageVersion":"^8.4.2"},{"name":"essentials","packageName":"@storybook/addon-essentials","packageVersion":"^8.4.2"},{"packageName":"@storybook/preset-create-react-app","packageVersion":"^8.4.2"},{"packageName":"@storybook/addon-onboarding","packageVersion":"^8.4.2"},{"name":"interactions","packageName":"@storybook/addon-interactions","packageVersion":"^8.4.2"},{"packageName":"@chromatic-com/storybook","packageVersion":"^3.2.2"}]}},{"status":"fulfilled","value":{}},{"status":"fulfilled","value":{"viewLayer":"@storybook/react-webpack5","version":"8.4.2"}},{"status":"fulfilled","value":{"builder":{"name":"@storybook/react-webpack5","packageVersion":"8.4.2"}}}]
+08:40:57.096 Collected Storybook metadata
+                 → Storybook 8.4.2 for @storybook/react Webpack5; using the @storybook/react-webpack5 builder (8.4.2); supported addons found: Links, Essentials, Interactions
+08:40:57.096 Initializing build
+08:40:57.098 Got environment:
+             {}
+08:40:59.379 Initialized build
+                 → Build 2 initialized
+08:40:59.445 Building your Storybook
+08:40:59.446     → Running command: npm run deploy-storybook -- --output-dir=C:\Users\gaf55\AppData\Local\Temp\chromatic--24328-g40j1aQlDyeb
+08:40:59.447 Running build command: npm run deploy-storybook -- --output-dir=C:\Users\gaf55\AppData\Local\Temp\chromatic--24328-g40j1aQlDyeb
+08:40:59.448 Runtime metadata: {
                "nodePlatform": "win32",
                "nodeVersion": "18.18.1",
-               "packageName": "chromatic",
-               "packageVersion": "11.18.0",
-               "flags": {
-                 "outputDir": [],
-                 "storybookBuildDir": [],
-                 "externals": [],
-                 "onlyStoryFiles": [],
-                 "onlyStoryNames": [],
-                 "untraced": [],
-                 "fileHashing": true,
-                 "interactive": true,
-                 "appCode": []
-               },
-               "configuration": {
-                 "configFile": "chromatic.config.json",
-                 "projectId": "Project:672fabb108933c7c72a06e2a",
-                 "debug": true,
-                 "zip": true,
-                 "buildScriptName": "deploy-storybook"
-               },
-               "buildScript": "gh-pages -d storybook-static",
-               "exitCode": 0,
-               "exitCodeKey": "OK",
-               "errorType": "Error",
-               "errorMessage": "× Failed to retrieve git information"
+               "packageManager": "npm",
+               "packageManagerVersion": "10.9.0"
+             }
+08:41:01.546 The CLI tried to run your deploy-storybook script, but the command failed. This indicates a problem with your Storybook. Here's what to do:
+             
+             - Check the Storybook build log printed below.
+             - Run npm run deploy-storybook or yarn deploy-storybook yourself and make sure it outputs a valid Storybook by opening the generated index.html in your browser.
+             - Review the build-storybook CLI options at https://storybook.js.org/docs/configurations/cli-options/#for-build-storybook
+             
+             Command failed with exit code 1: npm run deploy-storybook -- --output-dir=C:\Users\gaf55\AppData\Local\Temp\chromatic--24328-g40j1aQlDyeb
+             "gh-pages" �� ���� ����७��� ��� ���譥�
+             ��������, �ᯮ��塞�� �ணࠬ��� ��� ������ 䠩���.
+             
+             i Build command:
+             npm run deploy-storybook -- --output-dir=C:\Users\gaf55\AppData\Local\Temp\chromatic--24328-g40j1aQlDyeb
+             
+             i Runtime metadata:
+             {
+               "nodePlatform": "win32",
+               "nodeVersion": "18.18.1",
+               "packageManager": "npm",
+               "packageManagerVersion": "10.9.0"
              }
              
-             Error: Command failed with exit code 255: git log --reverse --format=%cd --date=iso | head -1
-             "head" �� ���� ����७��� ��� ���譥�
-             ��������, �ᯮ��塞�� �ணࠬ��� ��� ������ 䠩���.
-                 at jt (D:\project\React\chat_fe\node_modules\chromatic\dist\chunk-X7RBQNLE.js:55:57)
-                 at D:\project\React\chat_fe\node_modules\chromatic\dist\chunk-X7RBQNLE.js:56:1427
-                 at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-                 at async H (D:\project\React\chat_fe\node_modules\chromatic\dist\chunk-H5EV6FHP.js:34:69)
-                 at async Object.Ao [as y] (D:\project\React\chat_fe\node_modules\chromatic\dist\chunk-H5EV6FHP.js:36:2095)
-                 at async Ozn (D:\project\React\chat_fe\node_modules\chromatic\dist\chunk-3AQSJLAJ.js:1175:524)
-                 at async hae.task (D:\project\React\chat_fe\node_modules\chromatic\dist\chunk-3AQSJLAJ.js:950:2555)
-22:05:53.305 i Wrote Chromatic diagnostics report to chromatic-diagnostics.json
+             i Storybook build output:
+             D:\project\React\chat_fe\build-storybook.log
+             
+             
+             > chat_fe@0.1.0 deploy-storybook
+             > gh-pages -d storybook-static --output-dir=C:\Users\gaf55\AppData\Local\Temp\chromatic--24328-g40j1aQlDyeb
+08:41:01.548     → Command failed: npm run deploy-storybook -- --output-dir=C:\Users\gaf55\AppData\Local\Temp\chromatic--24328-g40j1aQlDyeb
+08:41:01.610 i Wrote Chromatic diagnostics report to chromatic-diagnostics.json

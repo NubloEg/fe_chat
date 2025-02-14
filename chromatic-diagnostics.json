@@ -1,4 +1,16 @@
 {
+  "announcedBuild": {
+    "id": "67aed76e3dd572768668ce05",
+    "number": 2,
+    "status": "ANNOUNCED",
+    "autoAcceptChanges": false,
+    "app": {
+      "id": "672fabb108933c7c72a06e2a",
+      "turboSnapAvailability": "UNAVAILABLE"
+    }
+  },
+  "buildCommand": "npm run deploy-storybook -- --output-dir=C:\\Users\\gaf55\\AppData\\Local\\Temp\\chromatic--24328-g40j1aQlDyeb",
+  "buildLogFile": "D:\\project\\React\\chat_fe\\build-storybook.log",
   "configuration": {
     "configFile": "chromatic.config.json",
     "projectId": "Project:672fabb108933c7c72a06e2a",
@@ -6,8 +18,9 @@
     "zip": true,
     "buildScriptName": "deploy-storybook"
   },
-  "exitCode": 255,
-  "exitCodeKey": "UNKNOWN_ERROR",
+  "environment": {},
+  "exitCode": 105,
+  "exitCodeKey": "NPM_BUILD_STORYBOOK_FAILED",
   "flags": {
     "outputDir": [],
     "storybookBuildDir": [],
@@ -21,16 +34,20 @@
   },
   "git": {
     "version": "2.42.0.windows.2",
-    "gitUserEmail": "106815766+NubloEg@users.noreply.github.com",
+    "gitUserEmail": "gaf555mailru@yandex.ru",
     "uncommittedHash": "fatal: ambiguous argument 'diff': unknown revision or path not in the working tree.\nUse '--' to separate paths from revisions, like this:\n'git <command> [<revision>...] -- [<file>...]'\ne69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
-    "commit": "651ba90915bbea4599c5546a016e9b6d28e72731",
-    "committedAt": 1731178543000,
+    "rootPath": "D:/project/React/chat_fe",
+    "commit": "ae3bb924227d6636c8de71c26d397e86f65508fa",
+    "committedAt": 1731179197000,
     "committerEmail": "gaf555mailru@yandex.ru",
-    "committerName": "Egor Dovgalev Local",
+    "committerName": "NubloEg",
     "branch": "feature/test-screenshot",
-    "fromCI": false
+    "slug": "nubloeg/fe_chat",
+    "fromCI": false,
+    "parentCommits": []
   },
   "input": [],
+  "isOnboarding": false,
   "options": {
     "fromCI": false,
     "inAction": false,
@@ -47,6 +64,7 @@
       "--project-token=chpt_6666e7a3f7dba8a"
     ],
     "logFile": "chromatic.log",
+    "forceRebuild": true,
     "zip": true,
     "buildScriptName": "deploy-storybook",
     "storybookLogFile": "build-storybook.log",
@@ -123,7 +141,7 @@
       "@storybook/react": "^8.4.2",
       "@storybook/react-webpack5": "^8.4.2",
       "@storybook/test": "^8.4.2",
-      "chromatic": "^11.18.0",
+      "chromatic": "^11.25.3",
       "eslint-plugin-storybook": "^0.11.0",
       "prop-types": "^15.8.1",
       "storybook": "^8.4.2",
@@ -132,13 +150,63 @@
     "resolutions": {
       "@types/react": "17.0.2",
       "@types/react-dom": "17.0.2"
-    },
-    "readme": "ERROR: No README data found!",
-    "_id": "chat_fe@0.1.0"
+    }
   },
   "packagePath": "D:\\project\\React\\chat_fe\\package.json",
-  "sessionId": "76faecd6-527c-44b3-a685-e728f316447f",
-  "startedAt": 1731179152291,
-  "task": "gitInfo",
-  "userError": false
+  "projectMetadata": {
+    "hasRouter": true,
+    "creationDate": {},
+    "storybookCreationDate": {},
+    "numberOfCommitters": 3,
+    "numberOfAppFiles": 33
+  },
+  "runtimeMetadata": {
+    "nodePlatform": "win32",
+    "nodeVersion": "18.18.1",
+    "packageManager": "npm",
+    "packageManagerVersion": "10.9.0"
+  },
+  "sessionId": "cd4d7a73-62b2-4262-b301-28d02f97654c",
+  "sourceDir": "C:\\Users\\gaf55\\AppData\\Local\\Temp\\chromatic--24328-g40j1aQlDyeb",
+  "startedAt": 1739511659380,
+  "storybook": {
+    "addons": [
+      {
+        "name": "links",
+        "packageName": "@storybook/addon-links",
+        "packageVersion": "^8.4.2"
+      },
+      {
+        "name": "essentials",
+        "packageName": "@storybook/addon-essentials",
+        "packageVersion": "^8.4.2"
+      },
+      {
+        "packageName": "@storybook/preset-create-react-app",
+        "packageVersion": "^8.4.2"
+      },
+      {
+        "packageName": "@storybook/addon-onboarding",
+        "packageVersion": "^8.4.2"
+      },
+      {
+        "name": "interactions",
+        "packageName": "@storybook/addon-interactions",
+        "packageVersion": "^8.4.2"
+      },
+      {
+        "packageName": "@chromatic-com/storybook",
+        "packageVersion": "^3.2.2"
+      }
+    ],
+    "viewLayer": "@storybook/react-webpack5",
+    "version": "8.4.2",
+    "builder": {
+      "name": "@storybook/react-webpack5",
+      "packageVersion": "8.4.2"
+    },
+    "baseDir": "."
+  },
+  "task": "build",
+  "userError": true
 }
